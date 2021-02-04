@@ -23,7 +23,6 @@ extern ADC_HandleTypeDef hadc1;
 #define LOOP_FREQUENCY_HZ 1000.0f //Hz
 
 // POSITION FILTER
-#define ALPHA_POSITION				0.05f // (default:0.05) F = 20kHz ==> Fc (-3dB) = 170.0Hz
 #define ALPHA_VOLTAGE				0.05f // (default:0.05) F = 20kHz ==> Fc (-3dB) = 170.0Hz
 #define ALPHA_CURRENT_SENSE			0.05f // (default:0.05) F = 20kHz ==> Fc (-3dB) = 170.0Hz
 #define ALPHA_CURRENT_SENSE_OFFSET 	0.001f
@@ -32,7 +31,7 @@ extern ADC_HandleTypeDef hadc1;
 #define ALPHA_VELOCITY			0.12f // (default:0.12) F = 1000Hz ==> Fc (-3dB) = 20Hz
 #define ALPHA_CURRENT_SETPOINT 	0.96f // (default:0.12) F = 1000Hz ==> Fc (-3dB) = 20Hz
 #define ALPHA_PWM_SETPOINT		0.12f // (default:0.12) F = 1000Hz ==> Fc (-3dB) = 20.0Hz
-#define VOLTAGE_CALIBRATION 	1.08f
+#define VOLTAGE_CALIBRATION 	1.10f
 
 // Private Variables
 
@@ -40,7 +39,6 @@ extern ADC_HandleTypeDef hadc1;
 volatile uint16_t ADC_DMA[3] = { 0,0,0 };
 // filtered sensor inputs
 static float motor_current_input_adc = 0.0f;
-static float position_input_adc = 0.0f;
 static float voltage_input_adc = 0.0f;
 static float motor_current_input_adc_offset = 0.0f;
 static float pwm_sign = 0.0f;
@@ -57,7 +55,7 @@ static float setpoint_velocity_dps = 0.0f;
 static float setpoint_position_deg = 0.0f;
 // control loop state
 static bool entering_state = true;
-static uint32_t current_control_mode = REG_CONTROL_MODE_POSITION_TORQUE;
+static uint32_t current_control_mode = REG_CONTROL_MODE_PWM;
 static uint16_t const period_us = (uint16_t)(1000000.0f/LOOP_FREQUENCY_HZ);
 static uint32_t counter = 0;
 // PIDs
@@ -72,19 +70,10 @@ void scale_all_sensors()
 {
 	// scale motor current sense (unit:mA) and estimated average motor current with sign (using PWM ratio and setpoint PWM sign)
 	float const a = (float)(MAKE_SHORT(regs[REG_CAL_CURRENT_SENSE_A_L],regs[REG_CAL_CURRENT_SENSE_A_H]));
-	present_motor_current_ma = (motor_current_input_adc-motor_current_input_adc_offset)/a*1000.0f*pwm_sign*pwm_ratio;
-
-	// scale position (unit:degrees)
-	float const min_position_adc = (float)(MAKE_SHORT(regs[REG_MIN_POSITION_ADC_L],regs[REG_MIN_POSITION_ADC_H]));
-	float const max_position_adc = (float)(MAKE_SHORT(regs[REG_MAX_POSITION_ADC_L],regs[REG_MAX_POSITION_ADC_H]));
-	float const max_rotation_deg = (float)(regs[REG_MAX_ROTATION_DEG]);
-	present_position_deg = fmap(position_input_adc,min_position_adc,max_position_adc,0.0f,max_rotation_deg);
-	// potentiometer leads maybe inverted, user can reverse polarity of potentiometer (EEPROM parameter)
-	if(regs[REG_INV_ROTATION_SENSOR] > 0)
-		present_position_deg =  max_rotation_deg-present_position_deg;
+	present_motor_current_ma = (motor_current_input_adc-motor_current_input_adc_offset)/4096.0f*a*pwm_sign*pwm_ratio;
 
 	// scale voltage (unit:0.1V)
-	present_voltage_0v1 = voltage_input_adc/4096.0f*3.3f*24.2f/2.2f*10.0f*VOLTAGE_CALIBRATION;
+	present_voltage_0v1 = voltage_input_adc/4096.0f*3.3f*24.0f/2.2f*10.0f*VOLTAGE_CALIBRATION;
 }
 
 // called once after SW REBBOT or HW RESET, and every time entering a new control loop mode
@@ -112,7 +101,6 @@ void APP_Control_Init()
 {
 	// reset (EWMA) filtered sensor inputs
 	motor_current_input_adc = 0.0f;
-	position_input_adc = 0.0f; // NOTE : init by zero will delay the present position estimation by 1 ms at least
 	voltage_input_adc = 0.0f; // NOTE : init by zero will delay the present voltage estimation by 1 ms at least
 	motor_current_input_adc_offset = (float)(MAKE_SHORT(regs[REG_CAL_CURRENT_SENSE_B_L],regs[REG_CAL_CURRENT_SENSE_B_H]));
 
@@ -124,7 +112,7 @@ void APP_Control_Init()
 	HAL_TIM_PWM_Start_IT(&htim4,TIM_CHANNEL_2);
 	HAL_TIM_Base_Start(&htim6);
 	// start ADC
-	//HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_DMA,3);
+	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_DMA,3);
 
 	// 2ms delay for filtered sensor inputs to stabilize
 	HAL_Delay(1);
@@ -565,8 +553,8 @@ void APP_Control_Process()
 	regs[REG_MOTOR_CURRENT_INPUT_ADC_OFFSET_L] = LOW_BYTE((uint16_t)motor_current_input_adc_offset);
 	regs[REG_MOTOR_CURRENT_INPUT_ADC_OFFSET_H] = HIGH_BYTE((uint16_t)motor_current_input_adc_offset);
 
-	regs[REG_POSITION_INPUT_ADC_L] = LOW_BYTE((uint16_t)position_input_adc);
-	regs[REG_POSITION_INPUT_ADC_H] = HIGH_BYTE((uint16_t)position_input_adc);
+	regs[REG_POSITION_INPUT_ADC_L] = LOW_BYTE((uint16_t)0);
+	regs[REG_POSITION_INPUT_ADC_H] = HIGH_BYTE((uint16_t)0);
 
 	regs[REG_VOLTAGE_INPUT_ADC_L] = LOW_BYTE((uint16_t)voltage_input_adc);
 	regs[REG_VOLTAGE_INPUT_ADC_H] = HIGH_BYTE((uint16_t)voltage_input_adc);
@@ -582,7 +570,6 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 	{
 		// Filter (EWMA) position and voltage ADC samples
 		voltage_input_adc = ALPHA_VOLTAGE * (float)(ADC_DMA[2]) + (1.0f-ALPHA_VOLTAGE) * voltage_input_adc;
-		position_input_adc = ALPHA_POSITION * (float)(ADC_DMA[1]) + (1.0f-ALPHA_POSITION) * position_input_adc;
 
 		// Filter (EWMA) motor current sense ADC samples
 
@@ -595,7 +582,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4))
 		{
 			// filter motor current
-			motor_current_input_adc = ALPHA_CURRENT_SENSE*(float)(ADC_DMA[0]) + (1.0f-ALPHA_CURRENT_SENSE)*motor_current_input_adc;
+			motor_current_input_adc = ALPHA_CURRENT_SENSE*(float)(ADC_DMA[1]) + (1.0f-ALPHA_CURRENT_SENSE)*motor_current_input_adc;
 		}
 		// In BRAKE phase, PWM is OFF, counter increases
 		else
@@ -603,7 +590,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 			// self-calibrate ADC offset (b) when motor is stopped
 			if(setpoint_pwm==0.0f)
 			{
-				motor_current_input_adc_offset = ALPHA_CURRENT_SENSE_OFFSET*(float)(ADC_DMA[0]) + (1.0f-ALPHA_CURRENT_SENSE_OFFSET)*motor_current_input_adc_offset;
+				motor_current_input_adc_offset = ALPHA_CURRENT_SENSE_OFFSET*(float)(ADC_DMA[1]) + (1.0f-ALPHA_CURRENT_SENSE_OFFSET)*motor_current_input_adc_offset;
 			}
 		}
 

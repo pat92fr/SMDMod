@@ -1,7 +1,14 @@
-18:20:20 **** Incremental Build of configuration Debug for project ControlFirmware ****
+18:52:47 **** Incremental Build of configuration Debug for project ControlFirmware ****
 make -j8 all 
 arm-none-eabi-size   ControlFirmware.elf 
    text	   data	    bss	    dec	    hex	filename
-  41656	    164	  15244	  57064	   dee8	ControlFirmware.elf
+  44836	    164	  15236	  60236	   eb4c	ControlFirmware.elf
+Finished building: default.size.stdout
+ 
+18:52:51 **** Incremental Build of configuration Debug for project ControlFirmware ****
+make -j8 all 
+arm-none-eabi-size   ControlFirmware.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44836	    164	  15236	  60236	   eb4c	ControlFirmware.elf
 Finished building: default.size.stdout
  

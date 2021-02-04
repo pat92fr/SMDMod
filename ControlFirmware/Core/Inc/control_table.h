@@ -172,8 +172,8 @@ extern "C" {
 //#define REG_PID_CURRENT_KI_VALUE			1		// 30-50 > 1 (1,3)
 //#define REG_PID_CURRENT_KFF_VALUE			10		// 10 (1,3)
 
-#define REG_CAL_CURRENT_SENSE_A_L_VALUE		1920	// 1872 (theory)
-#define REG_CAL_CURRENT_SENSE_B_L_VALUE		1205
+#define REG_CAL_CURRENT_SENSE_A_L_VALUE		3000	// Current (mA) when ADC=4096
+#define REG_CAL_CURRENT_SENSE_B_L_VALUE		0 		// NO OFFSET
 
 // REGISTER CONTROL MODE VALUES //////////////////////////////////////////////////////
 

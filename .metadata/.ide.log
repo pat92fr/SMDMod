@@ -1115,3 +1115,1527 @@
 2021-02-04 17:51:33,937 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 2523mS.
 2021-02-04 17:51:33,942 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 5mS.
 2021-02-04 17:51:33,947 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-04 18:21:05,347 [INFO] Activator:170 - 
+
+
+2021-02-04 18:21:05,350 [INFO] Activator:171 - !SESSION log4j initialized
+2021-02-04 18:22:50,573 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2021-02-04 18:22:50,804 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557
+2021-02-04 18:22:50,814 [INFO] DbMcusXml:71 - Set database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/mcu/
+2021-02-04 18:22:50,817 [INFO] DbBoardsPdsc:57 - Set plugin database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/boardmanager/
+2021-02-04 18:22:50,818 [INFO] DbMcus:259 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:50,818 [INFO] DbBoards:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:50,821 [INFO] DbExamples:329 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:50,827 [INFO] DbMcusDocs:112 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:50,829 [INFO] DbMcusJson:63 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:50,830 [INFO] DbBoardsDocs:112 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:50,832 [INFO] DbBoardsJson:56 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:50,863 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/cs/
+2021-02-04 18:22:50,866 [INFO] DbExamplesSqlite:699 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:50,976 [INFO] RulesReader:52 - Compatibility file has been processed (228 Rules)
+2021-02-04 18:22:51,115 [INFO] MicroXplorer:565 - Detected Java Version = 1.8.0_252
+2021-02-04 18:22:51,116 [INFO] DbMcusXml:71 - Set database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/mcu/
+2021-02-04 18:22:51,117 [INFO] DbBoardsPdsc:57 - Set plugin database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/boardmanager/
+2021-02-04 18:22:51,117 [INFO] DbMcus:259 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:51,118 [INFO] DbBoards:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:51,118 [INFO] DbExamples:329 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:51,118 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,119 [INFO] DbMcusDocs:112 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,119 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,119 [INFO] DbMcusJson:63 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,119 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,120 [INFO] DbBoardsDocs:112 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,120 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,120 [INFO] DbBoardsJson:56 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,120 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,121 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,121 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/cs/
+2021-02-04 18:22:51,121 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,121 [INFO] DbExamplesSqlite:699 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,218 [INFO] MainPanel:190 - HeapMemory: 402653184
+2021-02-04 18:22:51,306 [INFO] DbMcusXml:71 - Set database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/mcu/
+2021-02-04 18:22:51,307 [INFO] DbBoardsPdsc:57 - Set plugin database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/boardmanager/
+2021-02-04 18:22:51,307 [INFO] DbMcus:259 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:51,308 [INFO] DbBoards:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:51,308 [INFO] DbExamples:329 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/plugins/mcufinder/images/
+2021-02-04 18:22:51,309 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,309 [INFO] DbMcusDocs:112 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,310 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,310 [INFO] DbMcusJson:63 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,311 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,311 [INFO] DbBoardsDocs:112 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,311 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,312 [INFO] DbBoardsJson:56 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,312 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,312 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,313 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/cs/
+2021-02-04 18:22:51,313 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Patrick\.stmcufinder\plugins\mcufinder/ => C:\Users\Patrick\.stmcufinder\plugins\mcufinder
+2021-02-04 18:22:51,313 [INFO] DbExamplesSqlite:699 - Set database path to: C:\Users\Patrick\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-04 18:22:51,337 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557
+2021-02-04 18:22:51,339 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=, ]
+2021-02-04 18:22:51,341 [INFO] PluginManage:292 - Check plugin analytics
+2021-02-04 18:22:51,537 [INFO] AnalyticsPlugin:225 - Accepted Software Licenses: 
+2021-02-04 18:22:51,538 [INFO] AnalyticsPlugin:227 - Accepted CMSIS Pack Licenses: 
+2021-02-04 18:22:51,538 [INFO] AnalyticsPlugin:229 - Accepted Firmware Licenses: 
+2021-02-04 18:22:51,539 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2021-02-04 18:22:51,540 [INFO] PluginManage:292 - Check plugin clock
+2021-02-04 18:22:51,554 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2021-02-04 18:22:51,555 [INFO] PluginManage:292 - Check plugin ddr
+2021-02-04 18:22:51,559 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2021-02-04 18:22:51,559 [INFO] PluginManage:292 - Check plugin filemanager
+2021-02-04 18:22:51,712 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2021-02-04 18:22:51,713 [INFO] PluginManage:292 - Check plugin ipmanager
+2021-02-04 18:22:51,723 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2021-02-04 18:22:51,723 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2021-02-04 18:22:51,734 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2021-02-04 18:22:51,734 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2021-02-04 18:22:51,771 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2021-02-04 18:22:51,771 [INFO] PluginManage:292 - Check plugin power
+2021-02-04 18:22:51,782 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2021-02-04 18:22:51,782 [INFO] PluginManage:292 - Check plugin projectmanager
+2021-02-04 18:22:51,797 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2021-02-04 18:22:51,798 [INFO] PluginManage:292 - Check plugin thirdparty
+2021-02-04 18:22:51,919 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2021-02-04 18:22:51,919 [WARN] IntegrityCheckThread:59 - waiting for thirdparty lock release [integrity check]
+2021-02-04 18:22:51,919 [INFO] PluginManage:292 - Check plugin tools
+2021-02-04 18:22:51,920 [INFO] IntegrityCheckThread:61 - entering critical section [integrity check]
+2021-02-04 18:22:51,921 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [1/15]
+2021-02-04 18:22:51,924 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2021-02-04 18:22:51,925 [INFO] PluginManage:292 - Check plugin tutovideos
+2021-02-04 18:22:52,199 [INFO] PluginManage:342 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2021-02-04 18:22:52,200 [INFO] PluginManage:292 - Check plugin updater
+2021-02-04 18:22:52,215 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2021-02-04 18:22:52,216 [INFO] PluginManage:265 - PluginManage : Loaded plugins [13]
+2021-02-04 18:22:52,467 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-04 18:22:52,606 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,606 [INFO] PluginManager:203 - loadIPPluginJar : add adc
+2021-02-04 18:22:52,609 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,610 [INFO] PluginManager:203 - loadIPPluginJar : add aes
+2021-02-04 18:22:52,614 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,614 [INFO] PluginManager:203 - loadIPPluginJar : add can
+2021-02-04 18:22:52,617 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,617 [INFO] PluginManager:203 - loadIPPluginJar : add comp
+2021-02-04 18:22:52,620 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,620 [INFO] PluginManager:203 - loadIPPluginJar : add cryp
+2021-02-04 18:22:52,623 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,624 [INFO] PluginManager:203 - loadIPPluginJar : add dfsdm
+2021-02-04 18:22:52,631 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,632 [INFO] PluginManager:203 - loadIPPluginJar : add dma
+2021-02-04 18:22:52,635 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,635 [INFO] PluginManager:203 - loadIPPluginJar : add fatfs
+2021-02-04 18:22:52,641 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,641 [INFO] PluginManager:203 - loadIPPluginJar : add fmc
+2021-02-04 18:22:52,648 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,649 [INFO] PluginManager:203 - loadIPPluginJar : add freertos
+2021-02-04 18:22:52,651 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,652 [INFO] PluginManager:203 - loadIPPluginJar : add genericplugin
+2021-02-04 18:22:52,654 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,654 [INFO] PluginManager:203 - loadIPPluginJar : add gfxmmu
+2021-02-04 18:22:52,659 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,659 [INFO] PluginManager:203 - loadIPPluginJar : add gic
+2021-02-04 18:22:52,664 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,665 [INFO] PluginManager:203 - loadIPPluginJar : add gpio
+2021-02-04 18:22:52,668 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,668 [INFO] PluginManager:203 - loadIPPluginJar : add gtzc
+2021-02-04 18:22:52,670 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,671 [INFO] PluginManager:203 - loadIPPluginJar : add hash
+2021-02-04 18:22:52,673 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,673 [INFO] PluginManager:203 - loadIPPluginJar : add i2c
+2021-02-04 18:22:52,675 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,676 [INFO] PluginManager:203 - loadIPPluginJar : add i2s
+2021-02-04 18:22:52,679 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,679 [INFO] PluginManager:203 - loadIPPluginJar : add ipddr
+2021-02-04 18:22:52,682 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,682 [INFO] PluginManager:203 - loadIPPluginJar : add lorawan
+2021-02-04 18:22:52,684 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,685 [INFO] PluginManager:203 - loadIPPluginJar : add ltdc
+2021-02-04 18:22:52,690 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,690 [INFO] PluginManager:203 - loadIPPluginJar : add mdma
+2021-02-04 18:22:52,695 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,695 [INFO] PluginManager:203 - loadIPPluginJar : add nvic
+2021-02-04 18:22:52,699 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,700 [INFO] PluginManager:203 - loadIPPluginJar : add opamp
+2021-02-04 18:22:52,703 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,703 [INFO] PluginManager:203 - loadIPPluginJar : add openamp
+2021-02-04 18:22:52,705 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,706 [INFO] PluginManager:203 - loadIPPluginJar : add pdm2pcm
+2021-02-04 18:22:52,711 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,715 [INFO] PluginManager:203 - loadIPPluginJar : add plateformsettings
+2021-02-04 18:22:52,717 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,717 [INFO] PluginManager:203 - loadIPPluginJar : add quadspi
+2021-02-04 18:22:52,721 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,722 [INFO] PluginManager:203 - loadIPPluginJar : add resmgrutility
+2021-02-04 18:22:52,724 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,725 [INFO] PluginManager:203 - loadIPPluginJar : add sai
+2021-02-04 18:22:52,728 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,728 [INFO] PluginManager:203 - loadIPPluginJar : add spi
+2021-02-04 18:22:52,732 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,732 [INFO] PluginManager:203 - loadIPPluginJar : add stm32_wpan
+2021-02-04 18:22:52,735 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,735 [INFO] PluginManager:203 - loadIPPluginJar : add tim
+2021-02-04 18:22:52,738 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,738 [INFO] PluginManager:203 - loadIPPluginJar : add touchsensing
+2021-02-04 18:22:52,740 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,740 [INFO] PluginManager:203 - loadIPPluginJar : add tracer_emb
+2021-02-04 18:22:52,742 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,743 [INFO] PluginManager:203 - loadIPPluginJar : add ts
+2021-02-04 18:22:52,745 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,745 [INFO] PluginManager:203 - loadIPPluginJar : add tsc
+2021-02-04 18:22:52,747 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,747 [INFO] PluginManager:203 - loadIPPluginJar : add ucpd
+2021-02-04 18:22:52,750 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:22:52,751 [INFO] PluginManager:203 - loadIPPluginJar : add usart
+2021-02-04 18:22:53,098 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-04 18:22:53,248 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-04 18:22:53,287 [WARN] DetailPanel:347 - Failed to get advertising image, set to default
+2021-02-04 18:22:53,291 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-04 18:22:53,292 [WARN] DetailPanel:347 - Failed to get advertising image, set to default
+2021-02-04 18:22:53,369 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-04 18:22:53,369 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-04 18:22:54,921 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [2/15]
+2021-02-04 18:22:57,921 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-04 18:22:57,921 [ERROR] AbstractThirdPartyUpdaterManager:153 - java.lang.Integer cannot be cast to java.util.List
+2021-02-04 18:22:57,921 [INFO] ThirdParty:887 - Integrity check success = false
+2021-02-04 18:22:57,921 [INFO] IntegrityCheckThread:75 - exiting critical section [integrity check]
+2021-02-04 18:22:57,921 [INFO] IntegrityCheckThread:78 - End integrity checks thread
+2021-02-04 18:22:57,921 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-04 18:22:57,923 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-04 18:22:57,926 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-04 18:22:57,927 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-04 18:22:57,935 [ERROR] Updater:1065 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2021-02-04 18:22:57,938 [INFO] Updater:1002 - Updater Version found : 6.1.0
+2021-02-04 18:22:57,959 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557
+2021-02-04 18:22:58,168 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-04 18:22:58,169 [INFO] MainUpdater:249 - Updater Check For Update Now.
+2021-02-04 18:22:58,169 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-04 18:22:58,240 [INFO] CheckServerUpdateThread:102 - End of CheckServer Thread
+2021-02-04 18:22:58,299 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-04 18:22:58,300 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-04 18:22:58,402 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-04 18:22:58,402 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-04 18:22:58,402 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-04 18:22:58,402 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-04 18:22:58,403 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-04 18:22:58,405 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-04 18:22:58,406 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 280496584 Bytes (402653184)
+2021-02-04 18:22:58,408 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-04 18:22:58,409 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-04 18:22:58,409 [INFO] OpenFileManager:274 - Change cursor
+2021-02-04 18:22:58,412 [WARN] ThirdParty:204 - Use empty third party IP manager
+2021-02-04 18:22:58,436 [WARN] IntegrityCheckThread:59 - waiting for thirdparty lock release [integrity check]
+2021-02-04 18:22:58,436 [INFO] IntegrityCheckThread:61 - entering critical section [integrity check]
+2021-02-04 18:22:58,805 [INFO] ThirdParty:887 - Integrity check success = true
+2021-02-04 18:22:58,805 [INFO] IntegrityCheckThread:75 - exiting critical section [integrity check]
+2021-02-04 18:22:58,805 [INFO] IntegrityCheckThread:78 - End integrity checks thread
+2021-02-04 18:23:05,599 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SUBG2.3.0.1: no header file found
+2021-02-04 18:23:05,600 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SUBG2.3.0.1: no header file found
+2021-02-04 18:23:05,600 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SUBG2.3.0.1: no header file found
+2021-02-04 18:23:05,613 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2021-02-04 18:23:05,614 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2021-02-04 18:23:05,614 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2021-02-04 18:23:05,614 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2021-02-04 18:23:05,614 [WARN] ModelIntegratedComponent:182 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2021-02-04 18:23:05,617 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,617 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,617 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,617 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,618 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,618 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,618 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,618 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,618 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,618 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,619 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,620 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,621 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,621 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,621 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,621 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,621 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,621 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,622 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,622 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,622 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,622 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,622 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,622 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,623 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,623 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-04 18:23:05,660 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,661 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Request) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,661 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,661 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,661 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,663 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SignalID) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Polarity) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (RequestNumber) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncSignalID) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,665 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncPolarity) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,665 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncEnable) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,665 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (EventEnable) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,665 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncRequestNumber) has Id (USART2_RX) currently not set
+2021-02-04 18:23:05,665 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,665 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Request) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,666 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,666 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,666 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,666 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,666 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,666 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SignalID) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Polarity) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (RequestNumber) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncSignalID) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncPolarity) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncEnable) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,667 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (EventEnable) has Id (USART2_TX) currently not set
+2021-02-04 18:23:05,668 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (SyncRequestNumber) has Id (USART2_TX) currently not set
+2021-02-04 18:23:06,123 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 292866872 Bytes (402653184)
+2021-02-04 18:23:06,125 [INFO] DbMcusXml:97 - Load MCU database from C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\/mcu/families.xml
+2021-02-04 18:23:06,832 [INFO] DbMcusJson:92 - JSON generation date=Wed Jan 20 10:17:20 CET 2021 (1611134240)
+2021-02-04 18:23:07,708 [INFO] DbMcus:176 - Found 1835 MCUs (1796 are supported by CubeMX, 1804 are visible in CubeMX)
+2021-02-04 18:23:07,709 [INFO] ApiDb:238 - Load user favorites file C:\Users\Patrick/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2021-02-04 18:23:07,709 [INFO] ApiDb:242 - User favorites MCUs=[]
+2021-02-04 18:23:07,709 [INFO] DbMcus:188 - Set 0 / 0 favorites MCUs
+2021-02-04 18:23:07,713 [WARN] ThirdParty:749 - waiting for thirdparty lock release [change project]
+2021-02-04 18:23:07,713 [INFO] ThirdParty:751 - entering critical section [change project]
+2021-02-04 18:23:07,713 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2021-02-04 18:23:07,713 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 3.0.1
+2021-02-04 18:23:07,713 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2021-02-04 18:23:07,713 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2021-02-04 18:23:07,713 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.0.0
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2021-02-04 18:23:07,714 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2021-02-04 18:23:07,715 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2021-02-04 18:23:07,715 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2021-02-04 18:23:07,715 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2021-02-04 18:23:07,715 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2021-02-04 18:23:07,715 [INFO] ThirdParty:757 - exiting critical section [change project]
+2021-02-04 18:23:08,166 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-04 18:23:08,168 [INFO] PinOutPanel:1434 - setPackage(STM32G431KBTx,LQFP32)
+2021-02-04 18:23:08,651 [INFO] UtilMem:74 - Before build in PCC Used Memory: 386375144 Bytes (501219328)
+2021-02-04 18:23:09,372 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Patrick/.stm32cubemx/plugins/power
+2021-02-04 18:23:09,444 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Patrick/.stm32cubemx/plugins/power
+2021-02-04 18:23:09,562 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Patrick/.stm32cubemx/plugins/power
+2021-02-04 18:23:09,572 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Patrick/.stm32cubemx/plugins/power
+2021-02-04 18:23:09,575 [INFO] UserBatteryFile:86 - Battery_29 2000.0 5.0 4.2 2000.0 20000.0
+2021-02-04 18:23:09,802 [INFO] UtilMem:74 - After build in PCC Used Memory: 320876472 Bytes (501219328)
+2021-02-04 18:23:09,845 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,845 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,846 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,846 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,846 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,846 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,847 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,847 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,847 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,848 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,848 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,848 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,848 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,849 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,849 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,849 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,850 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,850 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,850 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,850 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,851 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,851 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,852 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,852 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,852 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,853 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,853 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,854 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,854 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,854 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,855 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,855 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,856 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,856 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,857 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,857 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,858 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,858 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,859 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,859 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,860 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,860 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,861 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,862 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,862 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,863 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,863 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,864 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,864 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,865 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,865 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,866 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,867 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,868 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,869 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,869 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-04 18:23:09,917 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2021-02-04 18:23:10,048 [INFO] OpenFileManager:294 - Restore cursor
+2021-02-04 18:23:27,328 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,171 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,172 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,172 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,173 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,173 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,173 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,174 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,174 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,175 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,175 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,175 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,176 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,176 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,176 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,177 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,177 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,177 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,178 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,178 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,178 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,178 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,310 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,393 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,394 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,394 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,395 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,395 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,396 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,396 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,397 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,397 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,397 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,398 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,398 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,398 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,398 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,399 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,399 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,399 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,399 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,400 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,400 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,400 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,406 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,407 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,407 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,407 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,408 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,410 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,411 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,411 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,412 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,412 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,413 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,413 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,413 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,414 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,414 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,416 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,417 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,417 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,418 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,418 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,419 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,419 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,420 [INFO] ADCParametersView:97 -                Rank 1 : false
+2021-02-04 18:23:32,420 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,578 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,578 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,579 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,579 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,580 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,580 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,580 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,581 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,581 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,582 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,582 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,582 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,583 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,583 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,583 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,584 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,584 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,584 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,585 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,585 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,585 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,585 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,586 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,586 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,586 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,586 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,587 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,587 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,587 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,588 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,588 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,588 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,588 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,589 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,589 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,589 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,589 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,590 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,590 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,590 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,590 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,591 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,591 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,591 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,592 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,592 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,592 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,592 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,593 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,593 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,593 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,593 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,594 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,594 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,594 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,594 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,595 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,595 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,595 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,595 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,595 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,595 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,596 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,596 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:23:32,615 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,750 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,751 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,751 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,752 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,752 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,752 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,753 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,753 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,753 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,754 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,754 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,754 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,754 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,754 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,755 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,755 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,755 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,755 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,756 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,756 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,756 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:06,774 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,794 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,798 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,799 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,799 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,799 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,800 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,800 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,800 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,801 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,801 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,801 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,801 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,802 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,802 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,802 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,802 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,803 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,803 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,803 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,803 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,804 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:11,823 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:19,820 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,519x357,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-02-04 18:24:22,265 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,267 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,267 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,268 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,268 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,268 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,268 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,268 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,268 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,269 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,269 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,269 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,269 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,270 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,270 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,270 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,270 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,270 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,271 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,271 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,271 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:22,284 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,828 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,834 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,834 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,835 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,835 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,835 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,836 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,836 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,836 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,836 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,837 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,837 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,837 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,837 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,837 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,838 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,838 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,838 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,838 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,838 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,839 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:31,856 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:34,598 [INFO] SpinnerEditor:79 - is string kkkk
+2021-02-04 18:24:38,825 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,829 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,829 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,830 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,830 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,830 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,831 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,831 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,831 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,831 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,832 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,832 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,832 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,843 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,844 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,844 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,844 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,844 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,844 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,845 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,845 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,864 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,864 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:38,864 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,920 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,920 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,925 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,925 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,925 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,925 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,926 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,926 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,926 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,926 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,927 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,927 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,927 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,927 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,927 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,927 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,928 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,929 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,930 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,931 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,931 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,931 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,931 [INFO] ADCParametersView:97 -        *      Rank 2 : false
+2021-02-04 18:24:41,946 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,946 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:41,947 [INFO] ADCParametersView:97 -                Rank 2 : false
+2021-02-04 18:24:44,156 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:44,156 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,177 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,177 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,181 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,182 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,182 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,182 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,182 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,182 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,183 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,184 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,184 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,184 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,184 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,184 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,185 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,185 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,185 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,185 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,185 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,186 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,186 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,186 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,186 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,186 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,187 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,187 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,187 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,187 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,187 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,187 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,188 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,188 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,188 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,188 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,188 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,189 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,189 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:46,215 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,215 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:24:46,215 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:24:55,567 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 347272024 Bytes (501219328)
+2021-02-04 18:24:57,824 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 362882840 Bytes (501219328)
+2021-02-04 18:24:59,383 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 370523496 Bytes (501219328)
+2021-02-04 18:25:00,045 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM6_7G4
+2021-02-04 18:25:00,045 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8G4
+2021-02-04 18:25:00,045 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8G4
+2021-02-04 18:25:00,046 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-04 18:25:00,046 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ADC
+2021-02-04 18:25:00,046 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-04 18:25:00,046 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-04 18:25:00,046 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-04 18:25:00,046 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DMA
+2021-02-04 18:25:00,047 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-04 18:25:00,048 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\
+2021-02-04 18:25:00,726 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\license.tmp_save
+2021-02-04 18:25:01,227 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\license.tmp
+2021-02-04 18:25:01,412 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\gpio.tmp_save
+2021-02-04 18:25:01,610 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\gpio.tmp
+2021-02-04 18:25:03,154 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:25:03,157 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:25:03,311 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma.tmp_save
+2021-02-04 18:25:03,411 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma.tmp
+2021-02-04 18:25:03,420 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma_GV.tmp_save
+2021-02-04 18:25:03,493 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma_GV.tmp
+2021-02-04 18:25:03,496 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:25:03,499 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:25:03,560 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_it.c_save
+2021-02-04 18:25:03,782 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_it.c
+2021-02-04 18:25:03,792 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_it.h_save
+2021-02-04 18:25:03,939 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_it.h
+2021-02-04 18:25:03,995 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_hal_msp.c_save
+2021-02-04 18:25:04,228 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_hal_msp.c
+2021-02-04 18:25:04,234 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\system.tmp_save
+2021-02-04 18:25:04,317 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\system.tmp
+2021-02-04 18:25:04,371 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_hal_conf.h_save
+2021-02-04 18:25:04,493 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_hal_conf.h
+2021-02-04 18:25:04,531 [WARN] IPConfigManager:2967 - IP not found : TIM
+2021-02-04 18:25:04,533 [WARN] CodeGenerator:3177 - IP not found : null
+2021-02-04 18:25:04,574 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\main.h_save
+2021-02-04 18:25:04,659 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\main.h
+2021-02-04 18:25:04,682 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\main.c_save
+2021-02-04 18:25:04,943 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\main.c
+2021-02-04 18:25:05,801 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 154mS.
+2021-02-04 18:25:05,809 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.0-B13
+2021-02-04 18:25:06,304 [INFO] ConfigFileManager:1238 - The Die is : DIE468
+2021-02-04 18:25:06,314 [INFO] ApiDbMcu:456 - Load IP Config File for FATFS
+2021-02-04 18:25:06,319 [INFO] ApiDbMcu:456 - Load IP Config File for FREERTOS
+2021-02-04 18:25:06,324 [INFO] ApiDbMcu:456 - Load IP Config File for USBPD
+2021-02-04 18:25:06,337 [INFO] ApiDbMcu:456 - Load IP Config File for USB_Device
+2021-02-04 18:25:08,625 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 2816mS.
+2021-02-04 18:25:08,626 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-04 18:25:08,631 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-04 18:32:26,761 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,551x357,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-02-04 18:32:56,145 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,146 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,147 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,147 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,148 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,148 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,148 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,148 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,148 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,149 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,149 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,149 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,149 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,149 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,150 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,150 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,150 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,150 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,151 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,152 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,152 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,152 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,152 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,152 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,152 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,153 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:56,165 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,165 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:56,166 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:57,818 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,551x357,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-02-04 18:32:59,391 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,392 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,393 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,393 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,393 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,393 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,393 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,394 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,395 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,396 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,397 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:32:59,410 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,410 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:32:59,410 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,186 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,187 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,190 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,190 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,191 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,191 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,191 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,191 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,191 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,192 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,193 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,194 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,195 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,196 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,196 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,196 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,196 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:11,211 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,211 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:33:11,212 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:33:13,154 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 812068816 Bytes (986710016)
+2021-02-04 18:33:14,782 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 825020328 Bytes (986710016)
+2021-02-04 18:33:15,518 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 426854856 Bytes (986710016)
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM6_7G4
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8G4
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8G4
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ADC
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-04 18:33:15,754 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DMA
+2021-02-04 18:33:15,755 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-04 18:33:15,756 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\
+2021-02-04 18:33:15,767 [INFO] Argument:278 - Argument : hdmavalue: null
+2021-02-04 18:33:15,767 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:33:15,767 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Channel3
+2021-02-04 18:33:15,767 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Channel3
+2021-02-04 18:33:15,767 [INFO] Argument:278 - Argument : Initvalue: null
+2021-02-04 18:33:15,767 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:33:15,767 [INFO] Argument:278 - Argument : Requestvalue: DMA_REQUEST_ADC1
+2021-02-04 18:33:15,767 [INFO] Argument:288 - Argument : Requestvalue: DMA_REQUEST_ADC1
+2021-02-04 18:33:15,767 [INFO] Argument:278 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:33:15,767 [INFO] Argument:288 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:33:15,768 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:33:15,768 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:33:15,768 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:33:15,768 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:33:15,768 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2021-02-04 18:33:15,768 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2021-02-04 18:33:15,768 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2021-02-04 18:33:15,768 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2021-02-04 18:33:15,768 [INFO] Argument:278 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:33:15,769 [INFO] Argument:288 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:33:15,769 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:33:15,769 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:33:15,769 [INFO] Argument:278 - Argument : Lockvalue: null
+2021-02-04 18:33:15,769 [INFO] Argument:288 - Argument : Lockvalue: null
+2021-02-04 18:33:15,769 [INFO] Argument:278 - Argument : Statevalue: null
+2021-02-04 18:33:15,769 [INFO] Argument:288 - Argument : Statevalue: null
+2021-02-04 18:33:15,769 [INFO] Argument:278 - Argument : Parentvalue: null
+2021-02-04 18:33:15,769 [INFO] Argument:288 - Argument : Parentvalue: null
+2021-02-04 18:33:15,769 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:278 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:288 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:278 - Argument : ChannelIndexvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:288 - Argument : ChannelIndexvalue: null
+2021-02-04 18:33:15,770 [INFO] Argument:278 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:288 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:278 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:288 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:278 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:288 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:278 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:288 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:33:15,771 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:33:15,842 [INFO] Argument:278 - Argument : hdmavalue: null
+2021-02-04 18:33:15,842 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:33:15,842 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Channel1
+2021-02-04 18:33:15,842 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Channel1
+2021-02-04 18:33:15,842 [INFO] Argument:278 - Argument : Initvalue: null
+2021-02-04 18:33:15,843 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : Requestvalue: DMA_REQUEST_USART2_RX
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : Requestvalue: DMA_REQUEST_USART2_RX
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:33:15,843 [INFO] Argument:278 - Argument : Lockvalue: null
+2021-02-04 18:33:15,843 [INFO] Argument:288 - Argument : Lockvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : Statevalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : Statevalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : Parentvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : Parentvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : ChannelIndexvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : ChannelIndexvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:288 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:33:15,844 [INFO] Argument:278 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:288 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:278 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:288 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:278 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:288 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:33:15,845 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:33:15,846 [INFO] Argument:278 - Argument : hdmavalue: null
+2021-02-04 18:33:15,846 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:33:15,846 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Channel2
+2021-02-04 18:33:15,846 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Channel2
+2021-02-04 18:33:15,846 [INFO] Argument:278 - Argument : Initvalue: null
+2021-02-04 18:33:15,846 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:33:15,846 [INFO] Argument:278 - Argument : Requestvalue: DMA_REQUEST_USART2_TX
+2021-02-04 18:33:15,846 [INFO] Argument:288 - Argument : Requestvalue: DMA_REQUEST_USART2_TX
+2021-02-04 18:33:15,846 [INFO] Argument:278 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2021-02-04 18:33:15,846 [INFO] Argument:288 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : Modevalue: DMA_NORMAL
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : Modevalue: DMA_NORMAL
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : Lockvalue: null
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : Lockvalue: null
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : Statevalue: null
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : Statevalue: null
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : Parentvalue: null
+2021-02-04 18:33:15,847 [INFO] Argument:288 - Argument : Parentvalue: null
+2021-02-04 18:33:15,847 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : ChannelIndexvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : ChannelIndexvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:288 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:33:15,848 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:33:15,849 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:33:15,849 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:33:15,849 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:33:16,091 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\license.tmp_save
+2021-02-04 18:33:16,160 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\license.tmp
+2021-02-04 18:33:16,230 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\gpio.tmp_save
+2021-02-04 18:33:16,293 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\gpio.tmp
+2021-02-04 18:33:17,291 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:33:17,293 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:33:17,427 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma.tmp_save
+2021-02-04 18:33:17,479 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma.tmp
+2021-02-04 18:33:17,484 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma_GV.tmp_save
+2021-02-04 18:33:17,530 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma_GV.tmp
+2021-02-04 18:33:17,532 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:33:17,534 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:33:17,588 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_it.c_save
+2021-02-04 18:33:17,720 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_it.c
+2021-02-04 18:33:17,729 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_it.h_save
+2021-02-04 18:33:17,807 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_it.h
+2021-02-04 18:33:17,841 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_hal_msp.c_save
+2021-02-04 18:33:18,029 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_hal_msp.c
+2021-02-04 18:33:18,036 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\system.tmp_save
+2021-02-04 18:33:18,114 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\system.tmp
+2021-02-04 18:33:18,169 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_hal_conf.h_save
+2021-02-04 18:33:18,260 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_hal_conf.h
+2021-02-04 18:33:18,281 [WARN] IPConfigManager:2967 - IP not found : TIM
+2021-02-04 18:33:18,282 [WARN] CodeGenerator:3177 - IP not found : null
+2021-02-04 18:33:18,315 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\main.h_save
+2021-02-04 18:33:18,381 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\main.h
+2021-02-04 18:33:18,398 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\main.c_save
+2021-02-04 18:33:18,602 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\main.c
+2021-02-04 18:33:19,351 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 128mS.
+2021-02-04 18:33:19,357 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.0-B13
+2021-02-04 18:33:19,569 [INFO] ConfigFileManager:1238 - The Die is : DIE468
+2021-02-04 18:33:21,303 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 1946mS.
+2021-02-04 18:33:21,304 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-04 18:33:21,309 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-04 18:36:02,761 [INFO] SpinnerEditor:79 - is string kkkk
+2021-02-04 18:36:05,178 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,178 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,181 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,182 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,182 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,182 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,182 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,182 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,183 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,183 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,183 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,183 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,184 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,184 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,184 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,184 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,184 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,185 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,185 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,185 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,185 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,185 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,186 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,186 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,186 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,186 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,187 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,187 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,187 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,187 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,187 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,188 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,188 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,188 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,188 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,188 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,189 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,189 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,189 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,189 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,189 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,189 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,190 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,209 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,210 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,210 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,210 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:05,211 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:05,211 [INFO] ADCParametersView:97 -        *      Rank 3 : false
+2021-02-04 18:36:07,581 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:07,581 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:07,581 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,349 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,349 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,349 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,353 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,353 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,353 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,353 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,353 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,353 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,354 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,355 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,356 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,357 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,358 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,358 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,358 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,358 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,358 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,358 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,359 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,360 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,361 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,361 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,361 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,361 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,361 [INFO] ADCParametersView:97 -        *      Rank 3 : true
+2021-02-04 18:36:11,374 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,375 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,375 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,375 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:11,375 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:11,376 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,928 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,928 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,928 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,932 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,932 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,933 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,933 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,933 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,933 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,934 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,935 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,936 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,937 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,938 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,938 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,938 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,938 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,938 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,938 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,939 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,939 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,939 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,939 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,939 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,939 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,940 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,940 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,940 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,940 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,940 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,940 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,941 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,941 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,941 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,941 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,941 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,942 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:12,960 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,961 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,961 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,962 [INFO] ADCParametersView:97 -                Rank 1 : true
+2021-02-04 18:36:12,962 [INFO] ADCParametersView:97 -                Rank 2 : true
+2021-02-04 18:36:12,963 [INFO] ADCParametersView:97 -                Rank 3 : true
+2021-02-04 18:36:16,062 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 629058304 Bytes (1028653056)
+2021-02-04 18:36:17,790 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 643738368 Bytes (1028653056)
+2021-02-04 18:36:18,537 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 721332992 Bytes (1028653056)
+2021-02-04 18:36:18,740 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM6_7G4
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8G4
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8G4
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ADC
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DMA
+2021-02-04 18:36:18,741 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-04 18:36:18,742 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\
+2021-02-04 18:36:18,750 [INFO] Argument:278 - Argument : hdmavalue: null
+2021-02-04 18:36:18,750 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Channel3
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Channel3
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : Initvalue: null
+2021-02-04 18:36:18,751 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : Requestvalue: DMA_REQUEST_ADC1
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : Requestvalue: DMA_REQUEST_ADC1
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2021-02-04 18:36:18,751 [INFO] Argument:278 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:36:18,751 [INFO] Argument:288 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : Lockvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : Lockvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : Statevalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : Statevalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : Parentvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : Parentvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:278 - Argument : ChannelIndexvalue: null
+2021-02-04 18:36:18,752 [INFO] Argument:288 - Argument : ChannelIndexvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:278 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:288 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:278 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:288 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:278 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:288 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:278 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:288 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:36:18,753 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:36:18,829 [INFO] Argument:278 - Argument : hdmavalue: null
+2021-02-04 18:36:18,829 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:36:18,829 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Channel1
+2021-02-04 18:36:18,829 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Channel1
+2021-02-04 18:36:18,829 [INFO] Argument:278 - Argument : Initvalue: null
+2021-02-04 18:36:18,829 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:36:18,829 [INFO] Argument:278 - Argument : Requestvalue: DMA_REQUEST_USART2_RX
+2021-02-04 18:36:18,829 [INFO] Argument:288 - Argument : Requestvalue: DMA_REQUEST_USART2_RX
+2021-02-04 18:36:18,829 [INFO] Argument:278 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : Modevalue: DMA_CIRCULAR
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : Lockvalue: null
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : Lockvalue: null
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : Statevalue: null
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : Statevalue: null
+2021-02-04 18:36:18,830 [INFO] Argument:278 - Argument : Parentvalue: null
+2021-02-04 18:36:18,830 [INFO] Argument:288 - Argument : Parentvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : ChannelIndexvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : ChannelIndexvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:288 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:36:18,831 [INFO] Argument:278 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:36:18,832 [INFO] Argument:288 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:36:18,832 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:36:18,832 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:36:18,832 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:36:18,832 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : hdmavalue: null
+2021-02-04 18:36:18,833 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Channel2
+2021-02-04 18:36:18,833 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Channel2
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : Initvalue: null
+2021-02-04 18:36:18,833 [INFO] Argument:280 - 	 sub Args: 
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : Requestvalue: DMA_REQUEST_USART2_TX
+2021-02-04 18:36:18,833 [INFO] Argument:288 - Argument : Requestvalue: DMA_REQUEST_USART2_TX
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2021-02-04 18:36:18,833 [INFO] Argument:288 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:36:18,833 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:36:18,833 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2021-02-04 18:36:18,833 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : Modevalue: DMA_NORMAL
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : Modevalue: DMA_NORMAL
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : Lockvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : Lockvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : Statevalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : Statevalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : Parentvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : Parentvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2021-02-04 18:36:18,834 [INFO] Argument:278 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : XferAbortCallbackvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : ChannelIndexvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : ChannelIndexvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : DMAmuxChannelvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : DMAmuxChannelStatusvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : DMAmuxChannelStatusMaskvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : DMAmuxRequestGenvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:278 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:36:18,835 [INFO] Argument:288 - Argument : DMAmuxRequestGenStatusMaskvalue: null
+2021-02-04 18:36:19,110 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\license.tmp_save
+2021-02-04 18:36:19,154 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\license.tmp
+2021-02-04 18:36:19,216 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\gpio.tmp_save
+2021-02-04 18:36:19,257 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\gpio.tmp
+2021-02-04 18:36:20,098 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:36:20,100 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:36:20,202 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma.tmp_save
+2021-02-04 18:36:20,248 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma.tmp
+2021-02-04 18:36:20,252 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma_GV.tmp_save
+2021-02-04 18:36:20,305 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\dma_GV.tmp
+2021-02-04 18:36:20,307 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:36:20,309 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-04 18:36:20,348 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_it.c_save
+2021-02-04 18:36:20,444 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_it.c
+2021-02-04 18:36:20,452 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_it.h_save
+2021-02-04 18:36:20,507 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_it.h
+2021-02-04 18:36:20,548 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_hal_msp.c_save
+2021-02-04 18:36:20,662 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\stm32g4xx_hal_msp.c
+2021-02-04 18:36:20,666 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\system.tmp_save
+2021-02-04 18:36:20,709 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\MXTmpFiles\system.tmp
+2021-02-04 18:36:20,742 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_hal_conf.h_save
+2021-02-04 18:36:20,829 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\stm32g4xx_hal_conf.h
+2021-02-04 18:36:20,853 [WARN] IPConfigManager:2967 - IP not found : TIM
+2021-02-04 18:36:20,854 [WARN] CodeGenerator:3177 - IP not found : null
+2021-02-04 18:36:20,890 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Inc\main.h_save
+2021-02-04 18:36:20,987 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Inc\main.h
+2021-02-04 18:36:21,002 [INFO] CodeEngine:229 - oldGeneratedFile, C:\GitHub\SMDMod\ControlFirmware\Core\Src\main.c_save
+2021-02-04 18:36:21,136 [INFO] CodeEngine:247 - Generated code: C:\GitHub\SMDMod\ControlFirmware\Core\Src\main.c
+2021-02-04 18:36:21,728 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 158mS.
+2021-02-04 18:36:21,734 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.0-B13
+2021-02-04 18:36:21,997 [INFO] ConfigFileManager:1238 - The Die is : DIE468
+2021-02-04 18:36:23,367 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 1633mS.
+2021-02-04 18:36:23,368 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-04 18:36:23,373 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
