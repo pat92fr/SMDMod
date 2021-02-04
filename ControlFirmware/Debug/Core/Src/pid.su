@@ -1,0 +1,4 @@
+pid.c:13:6:pid_reset	16	static
+pid.c:20:7:pid_process_antiwindup_clamp_with_ff	64	static
+pid.c:55:7:pid_process_antiwindup_clamp	64	static
+pid.c:89:7:pid_process_antiwindup_back_calculation	72	static

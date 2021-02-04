@@ -24,6 +24,10 @@
 /* USER CODE BEGIN Includes */
 #include "led.h"
 #include "serial.h"
+#include "eeprom.h"
+#include "control_table.h"
+#include "control_algo.h"
+#include "protocol.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,6 +50,7 @@ ADC_HandleTypeDef hadc2;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim6;
 
 UART_HandleTypeDef huart2;
 DMA_HandleTypeDef hdma_usart2_rx;
@@ -64,6 +69,7 @@ static void MX_ADC2_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -107,6 +113,7 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM4_Init();
   MX_USART2_UART_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 	HAL_Led_Init();
 	HAL_Led_Blink(LED0,10,150);
@@ -121,6 +128,11 @@ int main(void)
 		UART2_RX_DIR_Pin,
 		GPIO_PIN_RESET
 	);
+	if(eeprom_empty())
+		factory_reset_eeprom_regs();
+	load_eeprom_regs();
+	reset_ram_regs();
+	APP_Control_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -147,10 +159,15 @@ int main(void)
 	}
 	HAL_Led_Process();
 
+	// Handle communication
+	while(HAL_Serial_Available(&serial))
+	{
+	  char c = HAL_Serial_GetChar(&serial);
+	  packet_handler(c);
+	}
 
-	// TRACE
-	HAL_Serial_Print(&serial,".");
-	HAL_Delay(10);
+	// regulation
+	APP_Control_Process();
   }
   /* USER CODE END 3 */
 }
@@ -450,6 +467,44 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 2 */
   HAL_TIM_MspPostInit(&htim4);
+
+}
+
+/**
+  * @brief TIM6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM6_Init(void)
+{
+
+  /* USER CODE BEGIN TIM6_Init 0 */
+
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+
+  /* USER CODE END TIM6_Init 1 */
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 149;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 65535;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM6_Init 2 */
+
+  /* USER CODE END TIM6_Init 2 */
 
 }
 
