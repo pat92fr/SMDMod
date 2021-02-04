@@ -76,3 +76,70 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2021-02-04 19:02:10.405
 !MESSAGE Won't launch debug session since we failed to locate the binary.
+!SESSION 2021-02-04 22:24:04.135 -----------------------------------------------
+eclipse.buildId=Version 1.5.0
+java.version=1.8.0_252
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-02-04 22:24:10.923
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-02-04 22:24:10.980
+!MESSAGE Log4j initialized with config file C:\GitHub\SMDMod\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-02-04 22:24:15.761
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-02-04 22:24:16.599
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2021-02-04 23:35:58.362
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+load C:\\GitHub\\SMDMod\\ControlFirmware\\Debug\\ControlFirmware.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+load C:\\GitHub\\SMDMod\\ControlFirmware\\Debug\\ControlFirmware.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:296)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Failed to execute MI command:
+load C:\\GitHub\\SMDMod\\ControlFirmware\\Debug\\ControlFirmware.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+java.lang.Exception: Error finishing flash operation
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2021-02-04 23:35:58.362
+!MESSAGE Failed to execute MI command:
+load C:\\GitHub\\SMDMod\\ControlFirmware\\Debug\\ControlFirmware.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2021-02-04 23:35:58.363
+!MESSAGE Failed to execute MI command:
+load C:\\GitHub\\SMDMod\\ControlFirmware\\Debug\\ControlFirmware.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+!STACK 0
+java.lang.Exception: Error finishing flash operation
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)

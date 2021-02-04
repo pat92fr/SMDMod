@@ -46,25 +46,22 @@ static float pwm_sign = 0.0f;
 static float pwm_ratio = 0.0f;
 // scaled sensor inputs
 static float present_motor_current_ma = 0.0f;
-static float present_position_deg = 0.0f;
 static float present_voltage_0v1 = 0.0f;
 // setpoints
 static float setpoint_pwm = 0.0f;
 static float setpoint_current_ma = 0.0f;
 static float setpoint_acceleration_dpss = 0.0f;
 static float setpoint_velocity_dps = 0.0f;
-static float setpoint_position_deg = 0.0f;
 // control loop state
 static bool entering_state = true;
 static uint32_t current_control_mode = REG_CONTROL_MODE_PWM;
 static uint16_t const period_us = (uint16_t)(1000000.0f/LOOP_FREQUENCY_HZ);
 static uint32_t counter = 0;
 // PIDs
-static pid_context_t pid_position;
+static pid_context_t pid_velocity;
 static pid_context_t pid_current;
 // variables
 static float present_velocity_dps = 0.0f;
-static float last_present_position_deg = 0.0f;
 static float last_setpoint_velocity_dps = 0.0f;
 static uint16_t last_encoder_counter = 0;
 
@@ -84,18 +81,13 @@ void APP_Control_Reset()
 	// reset
 	entering_state = true;
 	counter = 0;
-	pid_reset(&pid_position);
+	pid_reset(&pid_velocity);
 	pid_reset(&pid_current);
 	setpoint_pwm = 0.0f;
 	setpoint_current_ma = 0.0f;
 	setpoint_acceleration_dpss = 0.0f;
 	setpoint_velocity_dps = 0.0f;
 	last_setpoint_velocity_dps = 0.0f;
-	setpoint_position_deg = present_position_deg;
-	last_present_position_deg = present_position_deg;
-	// when re-entering in the control mode 'position', avoid glitch from past goal position
-	regs[REG_GOAL_POSITION_DEG_L] = LOW_BYTE((int16_t)(present_position_deg*10.0f));
-	regs[REG_GOAL_POSITION_DEG_H] = HIGH_BYTE((int16_t)(present_position_deg*10.0f));
 }
 
 // called once after SW REBOOT or HW RESET
@@ -138,7 +130,7 @@ void APP_Control_Process()
 		return;
 	__HAL_TIM_SET_COUNTER(&htim6,(current_time_us-period_us));
 
-	// acquire motor current, position and voltage (see ADC DMA completed conversion callback)
+	// acquire motor current and voltage (see ADC DMA completed conversion callback)
 
 	// scale sensor at process rate
 	scale_all_sensors();
@@ -152,6 +144,8 @@ void APP_Control_Process()
 	float present_speed_dps_unfiltered = (float)delta_encoder_counter/CPR/REDUCT*360.0f*LOOP_FREQUENCY_HZ;
 	last_encoder_counter = present_encoder_counter;
 	present_velocity_dps = ALPHA_VELOCITY * present_speed_dps_unfiltered + (1.0f-ALPHA_VELOCITY)*present_velocity_dps;
+	if( regs[REG_INV_ROTATION_SENSOR_VALUE]==1)
+		present_velocity_dps = -present_velocity_dps;
 
 	// torque enable logic
 	bool torque_enable = (regs[REG_TORQUE_ENABLE]!=0) && (regs[REG_HARDWARE_ERROR_STATUS]==0);
@@ -161,212 +155,93 @@ void APP_Control_Process()
 		// compute setpoint_pwm
 		switch(current_control_mode)
 		{
-		// Simple PID from position to pwm
-		// Mg92 Kp = 400 Ki = 20 Kd = 400
-		case REG_CONTROL_MODE_POSITION:
+		case REG_CONTROL_MODE_OFF:
 			if(entering_state)
 			{
 				entering_state = false;
-				// init goal RAM registers according this control mode
-				regs[REG_GOAL_POSITION_DEG_L] = LOW_BYTE((int16_t)(present_position_deg*10.0f));
-				regs[REG_GOAL_POSITION_DEG_H] = HIGH_BYTE((int16_t)(present_position_deg*10.0f));
-				// init limit RAM registers according this control mode
-				regs[REG_GOAL_PWM_100_L] = regs[REG_MAX_PWM_100_L];
-				regs[REG_GOAL_PWM_100_H] = regs[REG_MAX_PWM_100_H];
-				// reset others
-				regs[REG_GOAL_VELOCITY_DPS_L] = 0;
-				regs[REG_GOAL_VELOCITY_DPS_H] = 0;
-				regs[REG_GOAL_CURRENT_MA_L] = 0;
-				regs[REG_GOAL_CURRENT_MA_H] = 0;
-				// set setpoint position at current position
-				setpoint_position_deg = present_position_deg;
 			}
-			{
-				// limit goal position
-				float const min_goal_position_deg = (float)(MAKE_SHORT(regs[REG_MIN_POSITION_DEG_L],regs[REG_MIN_POSITION_DEG_H]));
-				float const max_goal_position_deg = (float)(MAKE_SHORT(regs[REG_MAX_POSITION_DEG_L],regs[REG_MAX_POSITION_DEG_H]));
-				float goal_position_deg = 0.1f * (float)(MAKE_SHORT(regs[REG_GOAL_POSITION_DEG_L],regs[REG_GOAL_POSITION_DEG_H]));
-				goal_position_deg = fconstrain(goal_position_deg,min_goal_position_deg,max_goal_position_deg);
-				// compute position setpoint from goal position
-				// there is no profil, so position setpoint is goal position
-				setpoint_position_deg = goal_position_deg;
-				// compute position error
-				float const error_position = setpoint_position_deg - present_position_deg;
-				// compute pwm setpoint from position error using a PID position
-				float const pid_pos_kp = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KP_L],regs[REG_PID_POSITION_KP_H]))/100.0f;
-				float const pid_pos_ki = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KI_L],regs[REG_PID_POSITION_KI_H]))/1000.0f;
-				float const pid_pos_kd = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KD_L],regs[REG_PID_POSITION_KD_H]))/10.0f;
-				float const pwm_limit = (float)(MAKE_SHORT(regs[REG_GOAL_PWM_100_L],regs[REG_GOAL_PWM_100_H]));
-				setpoint_pwm =
-						ALPHA_PWM_SETPOINT * (
-								pid_process_antiwindup_clamp(
-										&pid_position,
-										error_position,
-										pid_pos_kp,
-										pid_pos_ki,
-										pid_pos_kd,
-										pwm_limit,
-										ALPHA_VELOCITY
-								)
-						) +
-						(1.0f-ALPHA_PWM_SETPOINT) * setpoint_pwm;
-			}
-			// unused setpoints zero
+			// reset
+			setpoint_acceleration_dpss = 0.0f;
 			setpoint_velocity_dps = 0.0f;
 			setpoint_current_ma = 0.0f;
+			setpoint_pwm = 0.0f;
 			// mode change
-			if(regs[REG_CONTROL_MODE]!=REG_CONTROL_MODE_POSITION)
+			if(regs[REG_CONTROL_MODE]!=REG_CONTROL_MODE_OFF)
 			{
 				APP_Control_Reset();
 				current_control_mode = regs[REG_CONTROL_MODE];
 			}
 			break;
 
-
-		case REG_CONTROL_MODE_POSITION_TORQUE:
+		case REG_CONTROL_MODE_ACCELERATION_PROFIL_VELOCITY_TORQUE:
 			if(entering_state)
 			{
 				entering_state = false;
-				// init goal RAM registers according this control mode
-				regs[REG_GOAL_POSITION_DEG_L] = LOW_BYTE((int16_t)(present_position_deg*10.0f));
-				regs[REG_GOAL_POSITION_DEG_H] = HIGH_BYTE((int16_t)(present_position_deg*10.0f));
-				// init limit RAM registers according this control mode
-				regs[REG_GOAL_CURRENT_MA_L] = regs[REG_MAX_CURRENT_MA_L];
-				regs[REG_GOAL_CURRENT_MA_H] = regs[REG_MAX_CURRENT_MA_H];
-				regs[REG_GOAL_PWM_100_L] = regs[REG_MAX_PWM_100_L];
-				regs[REG_GOAL_PWM_100_H] = regs[REG_MAX_PWM_100_H];
-				// reset others
-				regs[REG_GOAL_VELOCITY_DPS_L] = 0.0f;
-				regs[REG_GOAL_VELOCITY_DPS_H] = 0.0f;
-				// set setpoint position at current position
-				setpoint_position_deg = present_position_deg;
 			}
-			{
-				// limit goal position
-				float const min_goal_position_deg = (float)(MAKE_SHORT(regs[REG_MIN_POSITION_DEG_L],regs[REG_MIN_POSITION_DEG_H]));
-				float const max_goal_position_deg = (float)(MAKE_SHORT(regs[REG_MAX_POSITION_DEG_L],regs[REG_MAX_POSITION_DEG_H]));
-				float goal_position_deg = 0.1f * (float)(MAKE_SHORT(regs[REG_GOAL_POSITION_DEG_L],regs[REG_GOAL_POSITION_DEG_H]));
-				goal_position_deg = fconstrain(goal_position_deg,min_goal_position_deg,max_goal_position_deg);
-				// compute position setpoint from goal position
-				// there is no profil, so position setpoint is goal position
-				setpoint_position_deg = goal_position_deg;
-				// compute position error
-				float const error_position = setpoint_position_deg - present_position_deg;
-				// compute current setpoint from position error using a PID position
-				float const pid_pos_kp = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KP_L],regs[REG_PID_POSITION_KP_H]))/100.0f;
-				float const pid_pos_ki = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KI_L],regs[REG_PID_POSITION_KI_H]))/1000.0f;
-				float const pid_pos_kd = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KD_L],regs[REG_PID_POSITION_KD_H]))/10.0f;
-				float const current_limit = (float)(MAKE_SHORT(regs[REG_GOAL_CURRENT_MA_L],regs[REG_GOAL_CURRENT_MA_H]));
-				setpoint_current_ma =
-						ALPHA_CURRENT_SETPOINT * (
-								pid_process_antiwindup_clamp(
-										&pid_position,
-										error_position,
-										pid_pos_kp,
-										pid_pos_ki,
-										pid_pos_kd,
-										current_limit,
-										ALPHA_VELOCITY
-								)
-						) +
-						(1.0f-ALPHA_CURRENT_SETPOINT) * setpoint_current_ma;
-			}
-			{
-				// compute current error
-				float const error_current = setpoint_current_ma - present_motor_current_ma;
-				// compute pwm setpoint from current error using a PI
-				float const pid_current_kp = (float)(MAKE_SHORT(regs[REG_PID_CURRENT_KP_L],regs[REG_PID_CURRENT_KP_H]))/1000.0f;
-				float const pid_current_ki = (float)(MAKE_SHORT(regs[REG_PID_CURRENT_KI_L],regs[REG_PID_CURRENT_KI_H]))/100.0f;
-				float const pid_current_kff = (float)(MAKE_SHORT(regs[REG_PID_CURRENT_KFF_L],regs[REG_PID_CURRENT_KFF_H]))/100.0f;
-				float const pwm_limit = (float)(MAKE_SHORT(regs[REG_GOAL_PWM_100_L],regs[REG_GOAL_PWM_100_H]));
-				setpoint_pwm =
-						ALPHA_PWM_SETPOINT * (
-								pid_process_antiwindup_clamp_with_ff(
-										&pid_current,
-										error_current,
-										pid_current_kp,
-										pid_current_ki,
-										0.0f,
-										pwm_limit,
-										0.0f,
-										pid_current_kff * setpoint_current_ma
-								)
-							) +
-							(1.0f-ALPHA_PWM_SETPOINT) * setpoint_pwm ;
-			}
+			// reset
+			setpoint_acceleration_dpss = 0.0f;
+			setpoint_velocity_dps = 0.0f;
+			setpoint_current_ma = 0.0f;
+			setpoint_pwm = 0.0f;
 			// mode change
-			if(regs[REG_CONTROL_MODE]!=REG_CONTROL_MODE_POSITION_TORQUE)
+			if(regs[REG_CONTROL_MODE]!=REG_CONTROL_MODE_ACCELERATION_PROFIL_VELOCITY_TORQUE)
 			{
 				APP_Control_Reset();
 				current_control_mode = regs[REG_CONTROL_MODE];
 			}
 			break;
 
-
-		case REG_CONTROL_MODE_VELOCITY_PROFIL_POSITION_TORQUE:
+		case REG_CONTROL_MODE_VELOCITY_TORQUE:
 			if(entering_state)
 			{
 				entering_state = false;
 				// init goal RAM registers according this control mode
-				regs[REG_GOAL_POSITION_DEG_L] = LOW_BYTE((int16_t)(present_position_deg*10.0f));
-				regs[REG_GOAL_POSITION_DEG_H] = HIGH_BYTE((int16_t)(present_position_deg*10.0f));
+				regs[REG_GOAL_VELOCITY_DPS_L] = 0;
+				regs[REG_GOAL_VELOCITY_DPS_H] = 0;
 				// init limit RAM registers according this control mode
-				regs[REG_GOAL_VELOCITY_DPS_L] = regs[REG_MAX_VELOCITY_DPS_L];
-				regs[REG_GOAL_VELOCITY_DPS_H] = regs[REG_MAX_VELOCITY_DPS_H];
 				regs[REG_GOAL_CURRENT_MA_L] = regs[REG_MAX_CURRENT_MA_L];
 				regs[REG_GOAL_CURRENT_MA_H] = regs[REG_MAX_CURRENT_MA_H];
 				regs[REG_GOAL_PWM_100_L] = regs[REG_MAX_PWM_100_L];
 				regs[REG_GOAL_PWM_100_H] = regs[REG_MAX_PWM_100_H];
-				// set setpoint position at current position
-				setpoint_position_deg = present_position_deg;
+				// reset
+				last_setpoint_velocity_dps = 0.0f;
+				// reset unused RAM registers
+				regs[REG_GOAL_POSITION_DEG_L] = 0;
+				regs[REG_GOAL_POSITION_DEG_H] = 0;
 			}
 			{
-				// limit goal position
-				float const min_goal_position_deg = (float)(MAKE_SHORT(regs[REG_MIN_POSITION_DEG_L],regs[REG_MIN_POSITION_DEG_H]));
-				float const max_goal_position_deg = (float)(MAKE_SHORT(regs[REG_MAX_POSITION_DEG_L],regs[REG_MAX_POSITION_DEG_H]));
-				float goal_position_deg = 0.1f * (float)(MAKE_SHORT(regs[REG_GOAL_POSITION_DEG_L],regs[REG_GOAL_POSITION_DEG_H]));
-				goal_position_deg = fconstrain(goal_position_deg,min_goal_position_deg,max_goal_position_deg);
-				// compute position setpoint from goal position
+				// limit velocity
+				float goal_velocity_dps = (int16_t)(MAKE_SHORT(regs[REG_GOAL_VELOCITY_DPS_L],regs[REG_GOAL_VELOCITY_DPS_H]));
 				float const max_velocity_dps = (float)(MAKE_SHORT(regs[REG_GOAL_VELOCITY_DPS_L],regs[REG_GOAL_VELOCITY_DPS_H]));
-				float const max_acceleration_dpss = (float)(MAKE_SHORT(regs[REG_MAX_ACCELERATION_DPSS_L],regs[REG_MAX_ACCELERATION_DPSS_H]));
-				// trapezoidal profile for setpoint position
-				// compute remaining distance between setpoint position to goal position
-				float const remaining_distance_deg = goal_position_deg - setpoint_position_deg;
-				// compute maximun velocity to be able to stop at goal position
-				float vmax = sqrtf( 2.0f * max_acceleration_dpss * fabsf(remaining_distance_deg) );
-				// restore sign
-				vmax = ( remaining_distance_deg>0.0f) ? vmax : -vmax;
-				// limit maximum velocity, when far from stop
-				vmax = fconstrain(vmax,-max_velocity_dps,max_velocity_dps);
-				// compute distance between maximun velocity and current velocity
-				float delta_v = vmax - setpoint_velocity_dps;
-				// now compute new velocity according acceleration
-				setpoint_velocity_dps += fconstrain(delta_v, (-max_acceleration_dpss/LOOP_FREQUENCY_HZ), (max_acceleration_dpss/LOOP_FREQUENCY_HZ));
-				// now compute new position
-				setpoint_position_deg += (setpoint_velocity_dps/LOOP_FREQUENCY_HZ);
-				// now compute acceleration
-				setpoint_acceleration_dpss = (setpoint_velocity_dps - last_setpoint_velocity_dps)*LOOP_FREQUENCY_HZ;
-				last_setpoint_velocity_dps =  setpoint_velocity_dps;
+				goal_velocity_dps = fconstrain(goal_velocity_dps,-max_velocity_dps,max_velocity_dps);
+
+				// no profil
+				setpoint_velocity_dps = goal_velocity_dps;
+
+				// compute velocity error error
+				float const error_velocity_dps = setpoint_velocity_dps - present_velocity_dps;
+
+				// compute current setpoint from velocity error using a PID velocity and a velocity and acceleration feed forward
 				// compute current setpoint from position setpoint using a PID position and velocity/acceleration feed forwards
 				float const pid_vel_kff = (float)(MAKE_SHORT(regs[REG_PID_VELOCITY_KFF_L],regs[REG_PID_VELOCITY_KFF_H]))/1000.0f;
 				float const pid_acc_kff = (float)(MAKE_SHORT(regs[REG_PID_ACCELERATION_KFF_L],regs[REG_PID_ACCELERATION_KFF_H]))/100000.0f;
 				float const velocity_feed_forward = pid_vel_kff * setpoint_velocity_dps;
+				setpoint_acceleration_dpss = setpoint_velocity_dps - last_setpoint_velocity_dps;
 				float const acceleration_feed_forward = pid_acc_kff * setpoint_acceleration_dpss;
-				// compute position error
-				float const error_position = setpoint_position_deg - present_position_deg;
-				// compute current setpoint from position error using a PID position
-				float const pid_pos_kp = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KP_L],regs[REG_PID_POSITION_KP_H]))/100.0f;
-				float const pid_pos_ki = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KI_L],regs[REG_PID_POSITION_KI_H]))/1000.0f;
-				float const pid_pos_kd = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KD_L],regs[REG_PID_POSITION_KD_H]))/10.0f;
+				last_setpoint_velocity_dps = setpoint_velocity_dps;
+				// TODO Update REG names from position to velocity
+				float const pid_vel_kp = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KP_L],regs[REG_PID_POSITION_KP_H]))/100.0f;
+				float const pid_vel_ki = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KI_L],regs[REG_PID_POSITION_KI_H]))/1000.0f;
+				float const pid_vel_kd = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KD_L],regs[REG_PID_POSITION_KD_H]))/10.0f;
 				float const current_limit = (float)(MAKE_SHORT(regs[REG_GOAL_CURRENT_MA_L],regs[REG_GOAL_CURRENT_MA_H]));
 				setpoint_current_ma =
 						ALPHA_CURRENT_SETPOINT * (
 								pid_process_antiwindup_clamp_with_ff(
-										&pid_position,
-										error_position,
-										pid_pos_kp,
-										pid_pos_ki,
-										pid_pos_kd,
+										&pid_velocity,
+										error_velocity_dps,
+										pid_vel_kp,
+										pid_vel_ki,
+										pid_vel_kd,
 										current_limit,
 										ALPHA_VELOCITY,
 										velocity_feed_forward+acceleration_feed_forward
@@ -398,7 +273,7 @@ void APP_Control_Process()
 							(1.0f-ALPHA_PWM_SETPOINT) * setpoint_pwm ;
 			}
 			// mode change
-			if(regs[REG_CONTROL_MODE]!=REG_CONTROL_MODE_VELOCITY_PROFIL_POSITION_TORQUE)
+			if(regs[REG_CONTROL_MODE]!=REG_CONTROL_MODE_VELOCITY_TORQUE)
 			{
 				APP_Control_Reset();
 				current_control_mode = regs[REG_CONTROL_MODE];
@@ -416,16 +291,15 @@ void APP_Control_Process()
 				regs[REG_GOAL_PWM_100_L] = regs[REG_MAX_PWM_100_L];
 				regs[REG_GOAL_PWM_100_H] = regs[REG_MAX_PWM_100_H];
 				// reset unused RAM registers
-				regs[REG_GOAL_POSITION_DEG_L] = LOW_BYTE((int16_t)(present_position_deg*10.0f));
-				regs[REG_GOAL_POSITION_DEG_H] = HIGH_BYTE((int16_t)(present_position_deg*10.0f));
+				regs[REG_GOAL_POSITION_DEG_L] = 0;
+				regs[REG_GOAL_POSITION_DEG_H] = 0;
 				regs[REG_GOAL_VELOCITY_DPS_L] = 0;
 				regs[REG_GOAL_VELOCITY_DPS_H] = 0;
 			}
 			{
 				float const goal_current = (int16_t)(MAKE_SHORT(regs[REG_GOAL_CURRENT_MA_L],regs[REG_GOAL_CURRENT_MA_H]));
-				//float const current_limit = (float)(MAKE_SHORT(regs[REG_MAX_CURRENT_MA_L],regs[REG_MAX_CURRENT_MA_H]));
-				//setpoint_current_ma = fconstrain(goal_current,-current_limit,current_limit);
-				setpoint_current_ma = goal_current;
+				float const current_limit = (float)(MAKE_SHORT(regs[REG_MAX_CURRENT_MA_L],regs[REG_MAX_CURRENT_MA_H]));
+				setpoint_current_ma = fconstrain(goal_current,-current_limit,current_limit);
 				// compute current error
 				float const error_current = setpoint_current_ma - present_motor_current_ma;
 				// compute pwm setpoint from current error using a PI
@@ -465,8 +339,8 @@ void APP_Control_Process()
 				regs[REG_GOAL_PWM_100_L] = 0;
 				regs[REG_GOAL_PWM_100_H] = 0;
 				// reset unused RAM registers
-				regs[REG_GOAL_POSITION_DEG_L] = LOW_BYTE((int16_t)(present_position_deg*10.0f));
-				regs[REG_GOAL_POSITION_DEG_H] = HIGH_BYTE((int16_t)(present_position_deg*10.0f));
+				regs[REG_GOAL_POSITION_DEG_L] = 0;
+				regs[REG_GOAL_POSITION_DEG_H] = 0;
 				regs[REG_GOAL_VELOCITY_DPS_L] = 0;
 				regs[REG_GOAL_VELOCITY_DPS_H] = 0;
 				regs[REG_GOAL_CURRENT_MA_L] = 0;
@@ -528,8 +402,8 @@ void APP_Control_Process()
 	pwm_ratio = fabsf(setpoint_pwm)/100.0f;
 
 	// live update of RAM regs
-	regs[REG_PRESENT_POSITION_DEG_L] = LOW_BYTE((uint16_t)(present_position_deg*10.0f));
-	regs[REG_PRESENT_POSITION_DEG_H] = HIGH_BYTE((uint16_t)(present_position_deg*10.0f));
+	regs[REG_PRESENT_POSITION_DEG_L] = LOW_BYTE((uint16_t)(0.0f));
+	regs[REG_PRESENT_POSITION_DEG_H] = HIGH_BYTE((uint16_t)(0.0f));
 
 	regs[REG_PRESENT_VELOCITY_DPS_L] = LOW_BYTE((int16_t)present_velocity_dps);
 	regs[REG_PRESENT_VELOCITY_DPS_H] = HIGH_BYTE((int16_t)present_velocity_dps);
@@ -543,8 +417,8 @@ void APP_Control_Process()
 	float moving_threshold = regs[REG_MOVING_THRESHOLD_DPS];
 	regs[REG_MOVING] = ( fabs(present_velocity_dps) > moving_threshold ) ? 1 : 0;
 
-	regs[REG_SETPOINT_POSITION_DEG_L] = LOW_BYTE((uint16_t)(setpoint_position_deg*10.0f));
-	regs[REG_SETPOINT_POSITION_DEG_H] = HIGH_BYTE((uint16_t)(setpoint_position_deg*10.0f));
+	regs[REG_SETPOINT_POSITION_DEG_L] = LOW_BYTE((uint16_t)(0.0f));
+	regs[REG_SETPOINT_POSITION_DEG_H] = HIGH_BYTE((uint16_t)(0.0f));
 
 	regs[REG_SETPOINT_VELOCITY_DPS_L] = LOW_BYTE((int16_t)setpoint_velocity_dps);
 	regs[REG_SETPOINT_VELOCITY_DPS_H] = HIGH_BYTE((int16_t)setpoint_velocity_dps);

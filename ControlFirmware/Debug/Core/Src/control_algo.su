@@ -1,5 +1,5 @@
-control_algo.c:71:6:scale_all_sensors	16	static
-control_algo.c:82:6:APP_Control_Reset	8	static
-control_algo.c:102:6:APP_Control_Init	8	static
-control_algo.c:133:6:APP_Control_Process	264	static
-control_algo.c:577:6:HAL_ADC_ConvCpltCallback	16	static
+control_algo.c:68:6:scale_all_sensors	16	static
+control_algo.c:79:6:APP_Control_Reset	8	static
+control_algo.c:94:6:APP_Control_Init	8	static
+control_algo.c:125:6:APP_Control_Process	160	static
+control_algo.c:451:6:HAL_ADC_ConvCpltCallback	16	static

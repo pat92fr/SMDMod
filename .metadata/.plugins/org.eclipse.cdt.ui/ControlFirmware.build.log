@@ -1,20 +1,10 @@
-19:25:07 **** Incremental Build of configuration Debug for project ControlFirmware ****
+23:36:20 **** Incremental Build of configuration Debug for project ControlFirmware ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/control_algo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32G431xx -DUSE_HAL_DRIVER -DDEBUG -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/control_algo.d" -MT"Core/Src/control_algo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/control_algo.o"
-arm-none-eabi-gcc -o "ControlFirmware.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\GitHub\SMDMod\ControlFirmware\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ControlFirmware.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ControlFirmware.elf
- 
-arm-none-eabi-objdump -h -S  ControlFirmware.elf  > "ControlFirmware.list"
-arm-none-eabi-objcopy  -O binary  ControlFirmware.elf  "ControlFirmware.bin"
 arm-none-eabi-size   ControlFirmware.elf 
    text	   data	    bss	    dec	    hex	filename
-  45536	    164	  15236	  60936	   ee08	ControlFirmware.elf
+  41064	     60	  15228	  56352	   dc20	ControlFirmware.elf
 Finished building: default.size.stdout
  
-Finished building: ControlFirmware.bin
- 
-Finished building: ControlFirmware.list
- 
 
-19:25:09 Build Finished. 0 errors, 0 warnings. (took 1s.512ms)
+23:36:20 Build Finished. 0 errors, 0 warnings. (took 414ms)
 
