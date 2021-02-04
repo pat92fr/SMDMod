@@ -15,6 +15,7 @@
 #include <math.h>
 
 // Public variables
+extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim6;
 extern ADC_HandleTypeDef hadc1;
@@ -65,6 +66,7 @@ static pid_context_t pid_current;
 static float present_velocity_dps = 0.0f;
 static float last_present_position_deg = 0.0f;
 static float last_setpoint_velocity_dps = 0.0f;
+static uint16_t last_encoder_counter = 0;
 
 void scale_all_sensors()
 {
@@ -113,6 +115,9 @@ void APP_Control_Init()
 	HAL_TIM_Base_Start(&htim6);
 	// start ADC
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_DMA,3);
+	// start Encoder
+	HAL_TIM_IC_Start(&htim1,TIM_CHANNEL_1);
+	HAL_TIM_IC_Start(&htim1,TIM_CHANNEL_2);
 
 	// 2ms delay for filtered sensor inputs to stabilize
 	HAL_Delay(1);
@@ -138,9 +143,14 @@ void APP_Control_Process()
 	// scale sensor at process rate
 	scale_all_sensors();
 
-	// compute velocity from position (derivative), and filter velocity (EWMA)
-	float present_speed_dps_unfiltered = (present_position_deg - last_present_position_deg)*LOOP_FREQUENCY_HZ;
-	last_present_position_deg =  present_position_deg;
+	// compute velocity from encoder
+	uint16_t const present_encoder_counter = __HAL_TIM_GET_COUNTER(&htim1);
+	int16_t const delta_encoder_counter = present_encoder_counter - last_encoder_counter;
+	float const CPR = 48.0f; // TODO ==> make a dedicated EEPROM REG
+	float const REDUCT = 34.0f; // TODO ==> make a dedicated EEPROM REG
+	// TODO add a radius of wheel to compute body speed, and not only motor speed
+	float present_speed_dps_unfiltered = (float)delta_encoder_counter/CPR/REDUCT*360.0f*LOOP_FREQUENCY_HZ;
+	last_encoder_counter = present_encoder_counter;
 	present_velocity_dps = ALPHA_VELOCITY * present_speed_dps_unfiltered + (1.0f-ALPHA_VELOCITY)*present_velocity_dps;
 
 	// torque enable logic
@@ -553,8 +563,8 @@ void APP_Control_Process()
 	regs[REG_MOTOR_CURRENT_INPUT_ADC_OFFSET_L] = LOW_BYTE((uint16_t)motor_current_input_adc_offset);
 	regs[REG_MOTOR_CURRENT_INPUT_ADC_OFFSET_H] = HIGH_BYTE((uint16_t)motor_current_input_adc_offset);
 
-	regs[REG_POSITION_INPUT_ADC_L] = LOW_BYTE((uint16_t)0);
-	regs[REG_POSITION_INPUT_ADC_H] = HIGH_BYTE((uint16_t)0);
+	regs[REG_POSITION_INPUT_ADC_L] = LOW_BYTE((uint16_t)__HAL_TIM_GET_COUNTER(&htim1));
+	regs[REG_POSITION_INPUT_ADC_H] = HIGH_BYTE((uint16_t)__HAL_TIM_GET_COUNTER(&htim1));
 
 	regs[REG_VOLTAGE_INPUT_ADC_L] = LOW_BYTE((uint16_t)voltage_input_adc);
 	regs[REG_VOLTAGE_INPUT_ADC_H] = HIGH_BYTE((uint16_t)voltage_input_adc);
