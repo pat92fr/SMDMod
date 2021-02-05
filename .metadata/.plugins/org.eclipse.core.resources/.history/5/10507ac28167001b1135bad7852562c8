@@ -77,7 +77,6 @@ extern "C" {
 
 // TODO Add CPR word
 // TODO Add REDUCT word
-// TODO Add VOLTAGE calibration word (x1000)
 
 
 // RAM

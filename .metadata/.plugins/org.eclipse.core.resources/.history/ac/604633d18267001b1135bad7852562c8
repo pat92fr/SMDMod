@@ -101,6 +101,9 @@ void APP_Control_Init()
 
 	// 2ms delay for filtered sensor inputs to stabilize
 	HAL_Delay(1);
+	scale_all_sensors();
+	HAL_Delay(1);
+	scale_all_sensors();
 
 	// reset all state control loop variables
 	APP_Control_Reset();
