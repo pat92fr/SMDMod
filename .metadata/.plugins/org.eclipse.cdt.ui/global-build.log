@@ -1,4 +1,4 @@
-08:56:36 **** Incremental Build of configuration Release for project ControlFirmware ****
+12:58:04 **** Incremental Build of configuration Release for project ControlFirmware ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/control_algo.c" -mcpu=cortex-m4 -std=gnu11 -DSTM32G431xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/control_algo.d" -MT"Core/Src/control_algo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/control_algo.o"
 arm-none-eabi-gcc "../Core/Src/control_table.c" -mcpu=cortex-m4 -std=gnu11 -DSTM32G431xx -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/control_table.d" -MT"Core/Src/control_table.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/control_table.o"
@@ -11,17 +11,17 @@ arm-none-eabi-objdump -h -S  ControlFirmware.elf  > "ControlFirmware.list"
 arm-none-eabi-objcopy  -O binary  ControlFirmware.elf  "ControlFirmware.bin"
 arm-none-eabi-size   ControlFirmware.elf 
    text	   data	    bss	    dec	    hex	filename
-  22720	     60	  15212	  37992	   9468	ControlFirmware.elf
+  23080	     60	  15220	  38360	   95d8	ControlFirmware.elf
 Finished building: default.size.stdout
  
 Finished building: ControlFirmware.bin
  
 Finished building: ControlFirmware.list
  
-08:56:41 **** Incremental Build of configuration Release for project ControlFirmware ****
+12:58:10 **** Incremental Build of configuration Release for project ControlFirmware ****
 make -j8 all 
 arm-none-eabi-size   ControlFirmware.elf 
    text	   data	    bss	    dec	    hex	filename
-  22720	     60	  15212	  37992	   9468	ControlFirmware.elf
+  23080	     60	  15220	  38360	   95d8	ControlFirmware.elf
 Finished building: default.size.stdout
  

@@ -29,12 +29,12 @@ class ram_frame(LabelFrame):
 		self.gui_entry("LED", "led", 0, True, True, True, 0x41, 1, 1 )
 		self.gui_entry("Control Mode", "control_mode", 0, True, True, True, 0x42, 1, 1 )
 		self.gui_spacer("---")
-		self.gui_entry("Goal Position", "goal_position", 0, True, True, True, 0x43, 10, 2 )
+		self.gui_entry("Goal Accelration", "goal_acceleration", 0, True, True, True, 0x43, 1, 2 )
 		self.gui_entry("Goal Velocity", "goal_velocity", 0, True, True, True, 0x45, 1, 2 )
 		self.gui_entry("Goal Current", "goal_current", 0, True, True, True, 0x47, 1, 2 )
 		self.gui_entry("Goal PWM", "goal_pwm", 0, True, True, True, 0x49, 1, 2 )
 		self.gui_spacer("---")
-		self.gui_entry("Present Position", "present_position", 0, False, True, False, 0x4D, 10, 2 )
+		self.gui_entry("Present Acceleration", "present_acceleration", 0, False, True, False, 0x4D, 1, 2 )
 		self.gui_entry("Present Velocity", "present_velocity", 0, False, True, False, 0x4F, 1, 2 )
 		self.gui_entry("Present Current", "present_current", 0, False, True, False, 0x51, 1, 2 )
 		self.gui_entry("Present Voltage", "present_voltage", 0, False, True, False, 0x53, 1, 1 )
@@ -42,15 +42,14 @@ class ram_frame(LabelFrame):
 		self.gui_spacer("---")
 		self.gui_entry("Moving", "moving", 0, False, True, False, 0x55, 1, 1 )
 		self.gui_spacer("---")
-		self.gui_entry("Setpoint Position", "setpoint_position", 0, False, True, False, 0x56, 10, 2 )
+		self.gui_entry("Setpoint Acceleration", "setpoint_acceleration", 0, False, True, False, 0x56, 1, 2 )
 		self.gui_entry("Setpoint Velocity", "setpoint_velocity", 0, False, True, False, 0x58, 1, 2 )
 		self.gui_entry("Setpoint Current", "setpoint_current", 0, False, True, False, 0x5A, 1, 2 )
 		self.gui_entry("Setpoint PWM", "setpoint_pwm", 0, False, True, False, 0x5C, 1, 2 )
 		self.gui_spacer("---")
 		self.gui_entry("Motor Current ADC", "motor_current_input_adc", 0, False, True, False, 0x5E, 1, 2 )
-		self.gui_entry("Current Offset ADC", "motor_current_input_adc_offset", 0, False, True, False, 0x60, 1, 2 )
-		self.gui_entry("Position Input ADC", "position_input_adc", 0, False, True, False, 0x62, 1, 2 )
-		self.gui_entry("Current Input ADC", "voltage_input_adc", 0, False, True, False, 0x64, 1, 2 )
+		self.gui_entry("Encoder Absolute", "encoder_absolute", 0, False, True, False, 0x62, 1, 2 )
+		self.gui_entry("Voltage Input ADC", "voltage_input_adc", 0, False, True, False, 0x64, 1, 2 )
 		self.gui_spacer("---")
 		self.gui_entry("Protocol CRC Fail", "protocol_crc_fail", 0, False, True, False, 0x80, 1, 1 )
 		self.gui_entry("Hardware Error Status", "hardware_error_status", 0, False, True, False, 0x81, 1, 1 )
@@ -153,9 +152,9 @@ class ram_frame(LabelFrame):
 		if error != 0 :
 			print("error:"+str(error))
 		elif len(result)==54:
-			goal_position 		= float((result[3] + (result[4]<<8))/10.0)
-			setpoint_position 	= float((result[22] + (result[23]<<8))/10.0)
-			present_position 	= float((result[13] + (result[14]<<8))/10.0)
+			goal_acceleration 		= float(sign(result[3] + (result[4]<<8)))
+			setpoint_acceleration 	= float(sign(result[22] + (result[23]<<8)))
+			present_acceleration 	= float(sign(result[13] + (result[14]<<8)))
 			goal_velocity 		= float(sign(result[5] + (result[6]<<8)))
 			setpoint_velocity 	= float(sign(result[24] + (result[25]<<8)))
 			present_velocity 	= float(sign(result[15] + (result[16]<<8)))
@@ -166,9 +165,9 @@ class ram_frame(LabelFrame):
 			setpoint_pwm 		= float(sign( result[28] + (result[29]<<8)))
 
 			self.trace.update(
-				goal_position,
-				setpoint_position,
-				present_position,
+				goal_acceleration,
+				setpoint_acceleration,
+				present_acceleration,
 				goal_velocity,
 				setpoint_velocity,
 				present_velocity,
@@ -181,7 +180,7 @@ class ram_frame(LabelFrame):
 			if self.counter == 0:
 				self.variables['led_local'].set(str(result[1]))
 				self.variables['control_mode_local'].set(str(result[2]))
-				self.variables['goal_position_local'].set(str( goal_position ))
+				self.variables['goal_acceleration_local'].set(str( goal_acceleration ))
 				self.variables['goal_velocity_local'].set(str( goal_velocity ))
 				self.variables['goal_current_local'].set(str( goal_current ))
 				self.variables['goal_pwm_local'].set(str( goal_pwm ))
@@ -189,23 +188,22 @@ class ram_frame(LabelFrame):
 			self.variables['torque_enable_servo'].set(str(result[0]))
 			self.variables['led_servo'].set(str(result[1]))
 			self.variables['control_mode_servo'].set(str(result[2]))
-			self.variables['goal_position_servo'].set(str( goal_position ))
+			self.variables['goal_acceleration_servo'].set(str( goal_acceleration ))
 			self.variables['goal_velocity_servo'].set(str( goal_velocity ))
 			self.variables['goal_current_servo'].set(str( goal_current ))
 			self.variables['goal_pwm_servo'].set(str( goal_pwm ))
-			self.variables['present_position_servo'].set(str( present_position ))
+			self.variables['present_acceleration_servo'].set(str( present_acceleration ))
 			self.variables['present_velocity_servo'].set(str( present_velocity ))
 			self.variables['present_current_servo'].set(str( present_current ))
 			self.variables['present_voltage_servo'].set(str(result[19]))
 			self.variables['present_temperature_servo'].set(str(result[20]))
 			self.variables['moving_servo'].set(str(result[21]))
-			self.variables['setpoint_position_servo'].set(str( setpoint_position ))
+			self.variables['setpoint_acceleration_servo'].set(str( setpoint_acceleration ))
 			self.variables['setpoint_velocity_servo'].set(str( setpoint_velocity ))
 			self.variables['setpoint_current_servo'].set(str( setpoint_current ))
 			self.variables['setpoint_pwm_servo'].set(str( setpoint_pwm ))
 			self.variables['motor_current_input_adc_servo'].set(str(result[30] + (result[31]<<8)))
-			self.variables['motor_current_input_adc_offset_servo'].set(str(sign(result[32] + (result[33]<<8))))
-			self.variables['position_input_adc_servo'].set(str(result[34] + (result[35]<<8)))
+			self.variables['encoder_absolute_servo'].set(str(result[34] + (result[35]<<8)))
 			self.variables['voltage_input_adc_servo'].set(str(result[36] + (result[37]<<8)))
 
 			self.variables['protocol_crc_fail_servo'].set(str(result[52]))

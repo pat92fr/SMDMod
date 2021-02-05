@@ -17,17 +17,17 @@ extern "C" {
 // REGISTER ADDRESS ///////////////////////////////////////////////////////////
 
 // EEPROM
-#define REG_MODEL_NUMBER_L 		0x00
-#define REG_MODEL_NUMBER_H 		0x01
-#define REG_VERSION		 		0x02
-#define REG_ID             		0x03
-#define REG_BAUD_RATE      		0x04
-#define REG_RETURN_DELAY   		0x05
+#define REG_MODEL_NUMBER_L 			0x00
+#define REG_MODEL_NUMBER_H 			0x01
+#define REG_VERSION		 			0x02
+#define REG_ID             			0x03
+#define REG_BAUD_RATE      			0x04
+#define REG_RETURN_DELAY   			0x05
 
-#define REG_MIN_POSITION_DEG_L		0x10 // unused
-#define REG_MIN_POSITION_DEG_H		0x11 // unused
-#define REG_MAX_POSITION_DEG_L		0x12 // unused
-#define REG_MAX_POSITION_DEG_H		0x13 // unused
+#define REG_RESERVED_EEPROM_1		0x10 // unused
+#define REG_RESERVED_EEPROM_2		0x11 // unused
+#define REG_RESERVED_EEPROM_3		0x12 // unused
+#define REG_RESERVED_EEPROM_4		0x13 // unused
 #define REG_MAX_VELOCITY_DPS_L		0x14
 #define REG_MAX_VELOCITY_DPS_H		0x15
 #define REG_MAX_ACCELERATION_DPSS_L	0x16
@@ -36,7 +36,7 @@ extern "C" {
 #define REG_MAX_CURRENT_MA_H		0x19
 #define REG_MAX_PWM_100_L			0x1A
 #define REG_MAX_PWM_100_H			0x1B
-#define REG_TEMPERATURE_LIMIT		0x1C // unused
+#define REG_TEMPERATURE_LIMIT		0x1C // no sensor
 #define REG_LOW_VOLTAGE_LIMIT		0x1D
 #define REG_HIGH_VOLTAGE_LIMIT		0x1E
 
@@ -45,20 +45,20 @@ extern "C" {
 #define REG_ALARM_LED				0x21
 #define REG_ALARM_SHUTDOWN			0x22
 
-#define REG_MIN_POSITION_ADC_L		0x23 // unused
-#define REG_MIN_POSITION_ADC_H		0x24 // unused
-#define REG_MAX_POSITION_ADC_L		0x25 // unused
-#define REG_MAX_POSITION_ADC_H		0x26 // unused
-#define REG_MAX_ROTATION_DEG		0x27 // unused
+#define REG_CPR_L					0x23
+#define REG_CPR_H					0x24
+#define REG_REDUCER_L				0x25
+#define REG_REDUCER_H				0x26
+#define REG_RESERVED_EEPROM_5		0x27 // unused
 #define REG_INV_ROTATION_MOTOR		0x28
 #define REG_INV_ROTATION_SENSOR 	0x29
 
-#define REG_PID_POSITION_KP_L		0x2A // rename velocity
-#define REG_PID_POSITION_KP_H		0x2B // rename velocity
-#define REG_PID_POSITION_KI_L		0x2C // rename velocity
-#define REG_PID_POSITION_KI_H		0x2D // rename velocity
-#define REG_PID_POSITION_KD_L		0x2E // rename velocity
-#define REG_PID_POSITION_KD_H		0x2F // rename velocity
+#define REG_PID_VELOCITY_KP_L		0x2A
+#define REG_PID_VELOCITY_KP_H		0x2B
+#define REG_PID_VELOCITY_KI_L		0x2C
+#define REG_PID_VELOCITY_KI_H		0x2D
+#define REG_PID_VELOCITY_KD_L		0x2E
+#define REG_PID_VELOCITY_KD_H		0x2F
 #define REG_PID_VELOCITY_KFF_L		0x30
 #define REG_PID_VELOCITY_KFF_H		0x31
 #define REG_PID_ACCELERATION_KFF_L	0x32
@@ -72,114 +72,95 @@ extern "C" {
 
 #define REG_CAL_CURRENT_SENSE_A_L	0x3A
 #define REG_CAL_CURRENT_SENSE_A_H	0x3B
-#define REG_CAL_CURRENT_SENSE_B_L	0x3C // unused
-#define REG_CAL_CURRENT_SENSE_B_H	0x3D // unused
-
-// TODO Add CPR word
-// TODO Add REDUCT word
-// TODO Add VOLTAGE calibration word (x1000)
-
+#define REG_CAL_VOLTAGE_SENSE_L		0x3C
+#define REG_CAL_VOLTAGE_SENSE_H		0x3D
 
 // RAM
-#define REG_TORQUE_ENABLE  			0x40
-#define REG_LED			  			0x41
-#define REG_CONTROL_MODE			0x42
-#define REG_GOAL_POSITION_DEG_L		0x43 // unused
-#define REG_GOAL_POSITION_DEG_H		0x44 // unused
-#define REG_GOAL_VELOCITY_DPS_L		0x45
-#define REG_GOAL_VELOCITY_DPS_H		0x46
-#define REG_GOAL_CURRENT_MA_L		0x47
-#define REG_GOAL_CURRENT_MA_H		0x48
-#define REG_GOAL_PWM_100_L			0x49
-#define REG_GOAL_PWM_100_H			0x4A
-#define REG_RESERVED_RAM_1			0x4B // unused
-#define REG_RESERVED_RAM_2			0x4C // unused
-#define REG_PRESENT_POSITION_DEG_L	0x4D // unused
-#define REG_PRESENT_POSITION_DEG_H	0x4E // unused
-#define REG_PRESENT_VELOCITY_DPS_L	0x4F
-#define REG_PRESENT_VELOCITY_DPS_H	0x50
-#define REG_PRESENT_CURRENT_MA_L	0x51
-#define REG_PRESENT_CURRENT_MA_H	0x52
-#define REG_PRESENT_VOLTAGE			0x53
-#define REG_PRESENT_TEMPERATURE 	0x54 // unused
-#define REG_MOVING			 		0x55
+#define REG_TORQUE_ENABLE  					0x40
+#define REG_LED			  					0x41
+#define REG_CONTROL_MODE					0x42
+#define REG_GOAL_ACCELERATION_DPSS_L		0x43
+#define REG_GOAL_ACCELERATION_DPSS_H		0x44
+#define REG_GOAL_VELOCITY_DPS_L				0x45
+#define REG_GOAL_VELOCITY_DPS_H				0x46
+#define REG_GOAL_CURRENT_MA_L				0x47
+#define REG_GOAL_CURRENT_MA_H				0x48
+#define REG_GOAL_PWM_100_L					0x49
+#define REG_GOAL_PWM_100_H					0x4A
+#define REG_RESERVED_RAM_1					0x4B // unused
+#define REG_RESERVED_RAM_2					0x4C // unused
+#define REG_PRESENT_ACCELERATION_DPSS_L		0x4D
+#define REG_PRESENT_ACCELERATION_DPSS_H		0x4E
+#define REG_PRESENT_VELOCITY_DPS_L			0x4F
+#define REG_PRESENT_VELOCITY_DPS_H			0x50
+#define REG_PRESENT_CURRENT_MA_L			0x51
+#define REG_PRESENT_CURRENT_MA_H			0x52
+#define REG_PRESENT_VOLTAGE					0x53
+#define REG_PRESENT_TEMPERATURE 			0x54 // no sensor
+#define REG_MOVING			 				0x55
 // DEBUG RAM
-#define REG_SETPOINT_POSITION_DEG_L	0x56
-#define REG_SETPOINT_POSITION_DEG_H	0x57
-#define REG_SETPOINT_VELOCITY_DPS_L	0x58
-#define REG_SETPOINT_VELOCITY_DPS_H	0x59
-#define REG_SETPOINT_CURRENT_MA_L	0x5A
-#define REG_SETPOINT_CURRENT_MA_H	0x5B
-#define REG_SETPOINT_PWM_100_L		0x5C
-#define REG_SETPOINT_PWM_100_H		0x5D
-#define REG_MOTOR_CURRENT_INPUT_ADC_L 			0x5E
-#define REG_MOTOR_CURRENT_INPUT_ADC_H 			0x5F
-#define REG_MOTOR_CURRENT_INPUT_ADC_OFFSET_L 	0x60 // unused
-#define REG_MOTOR_CURRENT_INPUT_ADC_OFFSET_H 	0x61 // unused
-#define REG_POSITION_INPUT_ADC_L	0x62 // rename encoder absolute
-#define REG_POSITION_INPUT_ADC_H	0x63 // rename encoder absolute
-#define REG_VOLTAGE_INPUT_ADC_L		0x64
-#define REG_VOLTAGE_INPUT_ADC_H		0x65
+#define REG_SETPOINT_ACCELERATION_DPSS_L	0x56
+#define REG_SETPOINT_ACCELERATION_DPSS_H	0x57
+#define REG_SETPOINT_VELOCITY_DPS_L			0x58
+#define REG_SETPOINT_VELOCITY_DPS_H			0x59
+#define REG_SETPOINT_CURRENT_MA_L			0x5A
+#define REG_SETPOINT_CURRENT_MA_H			0x5B
+#define REG_SETPOINT_PWM_100_L				0x5C
+#define REG_SETPOINT_PWM_100_H				0x5D
+#define REG_MOTOR_CURRENT_INPUT_ADC_L 		0x5E
+#define REG_MOTOR_CURRENT_INPUT_ADC_H		0x5F
+#define REG_DEBUG_RAM_RESERVED_1   			0x60 // unused
+#define REG_DEBUG_RAM_RESERVED_2 			0x61 // unused
+#define REG_ENCODER_ABSOLUTE_L				0x62
+#define REG_ENCODER_ABSOLUTE_H				0x63
+#define REG_VOLTAGE_INPUT_ADC_L				0x64
+#define REG_VOLTAGE_INPUT_ADC_H				0x65
 // SW & HW ERROR
-#define REG_PROTOCOL_CRC_FAIL 		0x80
-#define REG_HARDWARE_ERROR_STATUS 	0x81
-
-// TODO Add setpoint acceleration (debug)
-
-#define REG_MAX             		0x82
+#define REG_PROTOCOL_CRC_FAIL 				0x80
+#define REG_HARDWARE_ERROR_STATUS 			0x81
+// End
+#define REG_MAX             				0x82
 
 
 // REGISTER FACTORY DEFAULT VALUES ////////////////////////////////////////////
 
-#define REG_MODEL_NUMBER_VALUE 				92
+#define REG_MODEL_NUMBER_VALUE 				25		// D=25mm motor
 #define REG_VERSION_VALUE 					0
 #define REG_ID_VALUE 						1
 #define REG_BAUD_RATE_VALUE 				3		// 1: 1Mbps
 #define REG_RETURN_DELAY_VALUE 				0		// 0: zero delay
 
-#define REG_MIN_POSITION_DEG_VALUE 			30		// deg 0° (0..360)
-#define REG_MAX_POSITION_DEG_VALUE 			150		// deg 180° (0..360)
-#define REG_MAX_VELOCITY_DPS_VALUE			800		// dps
-#define REG_MAX_ACCELERATION_DPSS_VALUE		8000	// 12000 dpss
-#define REG_MAX_CURRENT_MA_VALUE			250		// mA
-#define REG_MAX_PWM_100_VALUE				50		// 0..99
+#define REG_MAX_VELOCITY_DPS_VALUE			1200	// dps
+#define REG_MAX_ACCELERATION_DPSS_VALUE		8000	// dpss
+#define REG_MAX_CURRENT_MA_VALUE			500		// mA
+#define REG_MAX_PWM_100_VALUE				99		// 0..99
 #define REG_TEMPERATURE_LIMIT_VALUE		 	60		// °C
 #define REG_LOW_VOLTAGE_LIMIT_VALUE		 	45		// 100mV
-#define REG_HIGH_VOLTAGE_LIMIT_VALUE		95		// 100mV
+#define REG_HIGH_VOLTAGE_LIMIT_VALUE		255		// 100mV
 
 #define REG_MOVING_THRESHOLD_DPS_VALUE		5		// dps
 #define REG_STATUS_RETURN_LVL_VALUE			2		// TODO : fill comment
 #define REG_ALARM_LED_VALUE					36		// TODO : fill comment
 #define REG_ALARM_SHUTDOWN_VALUE			36		// TODO : fill comment
 
-#define REG_MIN_POSITION_ADC_VALUE			50		// 0..4095
-#define REG_MAX_POSITION_ADC_VALUE			3950	// 0..4095
-#define REG_MAX_ROTATION_DEG_VALUE			180		// deg
-#define REG_INV_ROTATION_MOTOR_VALUE		0		// 0: NORMAL 1: INV
+#define REG_CPR_VALUE						48		//
+#define REG_REDUCER_VALUE					34		//
+#define REG_INV_ROTATION_MOTOR_VALUE		1		// 0: NORMAL 1: INV
 #define REG_INV_ROTATION_SENSOR_VALUE		0		// 0: NORMAL 1: INV
 
-// MG92b
-#define REG_PID_POSITION_KP_VALUE			2000	// k 2000 (modes : 1,2)
-#define REG_PID_POSITION_KI_VALUE			0		// k 0..40 (modes : 1,2)
-#define REG_PID_POSITION_KD_VALUE			3600	// k 3600 (modes : 1,2)
-#define REG_PID_VELOCITY_KFF_VALUE			10		// k 10 (modes : 2)
-#define REG_PID_ACCELERATION_KFF_VALUE		10		// k 10 (modes : 2)
-#define REG_PID_CURRENT_KP_VALUE			500		// k 500 (modes : 1,2,3)
-#define REG_PID_CURRENT_KI_VALUE			1		// k   1 (modes : 1,2,3)
-#define REG_PID_CURRENT_KFF_VALUE			20		// k  20 (modes : 1,2,3)
+// D25mm Pololu 6V
+#define REG_PID_VELOCITY_KP_VALUE			100		// k 100
+#define REG_PID_VELOCITY_KI_VALUE			1		// k 1
+#define REG_PID_VELOCITY_KD_VALUE			10		// k 10
+#define REG_PID_VELOCITY_KFF_VALUE			100		// k 100
+#define REG_PID_ACCELERATION_KFF_VALUE		10		// k 10
+#define REG_PID_CURRENT_KP_VALUE			500		// k 500
+#define REG_PID_CURRENT_KI_VALUE			1		// k 1
+#define REG_PID_CURRENT_KFF_VALUE			40		// k 40
 
-// MG90s
-//#define REG_PID_POSITION_KP_VALUE			2000	// k 400 (0), 1400-2000 (1)
-//#define REG_PID_POSITION_KI_VALUE			40		// k 20 (0), 40 (1)
-//#define REG_PID_POSITION_KD_VALUE			2000	// k 400 (0), 2000-4000 (1)
-//#define REG_PID_VELOCITY_KFF_VALUE			0		// k 0
-//#define REG_PID_ACCELERATION_KFF_VALUE		0		// k 0
-//#define REG_PID_CURRENT_KP_VALUE			1000	// 110-250 > 1000 (1,3)
-//#define REG_PID_CURRENT_KI_VALUE			1		// 30-50 > 1 (1,3)
-//#define REG_PID_CURRENT_KFF_VALUE			10		// 10 (1,3)
-
-#define REG_CAL_CURRENT_SENSE_A_L_VALUE		3000	// Current (mA) when ADC=4096
-#define REG_CAL_CURRENT_SENSE_B_L_VALUE		0 		// NO OFFSET
+// Calibration
+#define REG_CAL_CURRENT_SENSE_A_VALUE		3000	// Current (mA) when ADC=4096
+#define REG_CAL_VOLTAGE_SENSE_VALUE			1100 	// 1100 (1.1f)
 
 // REGISTER CONTROL MODE VALUES //////////////////////////////////////////////////////
 

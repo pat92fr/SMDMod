@@ -1,10 +1,10 @@
-08:56:41 **** Incremental Build of configuration Release for project ControlFirmware ****
+12:58:10 **** Incremental Build of configuration Release for project ControlFirmware ****
 make -j8 all 
 arm-none-eabi-size   ControlFirmware.elf 
    text	   data	    bss	    dec	    hex	filename
-  22720	     60	  15212	  37992	   9468	ControlFirmware.elf
+  23080	     60	  15220	  38360	   95d8	ControlFirmware.elf
 Finished building: default.size.stdout
  
 
-08:56:41 Build Finished. 0 errors, 0 warnings. (took 356ms)
+12:58:10 Build Finished. 0 errors, 0 warnings. (took 355ms)
 

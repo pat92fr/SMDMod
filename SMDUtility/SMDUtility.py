@@ -17,7 +17,7 @@ import cProfile
 
 def main():
 
-	servo = servo_protocol2('COM3',115200) ##eeprom baud = 3
+	servo = servo_protocol2('COM3',500000) ##eeprom baud = 3
 
 	window = Tk()
 	window.title(" MyServoGUI")

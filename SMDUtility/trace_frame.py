@@ -60,23 +60,23 @@ class trace_frame(LabelFrame):
 		self.checks['round_position'] = Checkbutton(fa,text="Round position Test", variable=self.variables["round_position"])
 		self.checks['round_position'].grid(column = 1, row = 0, sticky='nw')
 		
-		fp = LabelFrame(self,text="Position Control")
+		fp = LabelFrame(self,text="Acceleration")
 		fp.grid(column = 0, row = 1, sticky='nesw')
 		fp.columnconfigure(0, weight=1)
-		self.viewports['position'] = Canvas(fp, bg="#FFFFFF") #, width=viewport_max_x, height=viewport_size_y_pos, bg="#FFFFFF")
-		self.viewports['position'].grid(column = 0, row = 1, rowspan=20, sticky="we") #, sticky='wens')
-		self.variables['goal_position'] = IntVar()
-		self.variables['goal_position'].set(1)
-		self.checks['goal_position']= Checkbutton(fp,text="Goal Position",variable=self.variables['goal_position'])
-		self.checks['goal_position'].grid(column = 4, row = 1, sticky='w')
-		self.variables['setpoint_position'] = IntVar()
-		self.variables['setpoint_position'].set(1)
-		self.checks['setpoint_position']= Checkbutton(fp,text="Setpoint Position",variable=self.variables['setpoint_position'])
-		self.checks['setpoint_position'].grid(column = 4, row = 2, sticky='w')
-		self.variables['present_position'] = IntVar()
-		self.variables['present_position'].set(1)		
-		self.checks['present_position']= Checkbutton(fp,text="Present Position",variable=self.variables['present_position'])
-		self.checks['present_position'].grid(column = 4, row = 3, sticky='w')
+		self.viewports['acceleration'] = Canvas(fp, bg="#FFFFFF") #, width=viewport_max_x, height=viewport_size_y_pos, bg="#FFFFFF")
+		self.viewports['acceleration'].grid(column = 0, row = 1, rowspan=20, sticky="we") #, sticky='wens')
+		self.variables['goal_acceleration'] = IntVar()
+		self.variables['goal_acceleration'].set(1)
+		self.checks['goal_acceleration']= Checkbutton(fp,text="Goal Acceleration",variable=self.variables['goal_acceleration'])
+		self.checks['goal_acceleration'].grid(column = 4, row = 1, sticky='w')
+		self.variables['setpoint_acceleration'] = IntVar()
+		self.variables['setpoint_acceleration'].set(1)
+		self.checks['setpoint_acceleration']= Checkbutton(fp,text="Setpoint Acceleration",variable=self.variables['setpoint_acceleration'])
+		self.checks['setpoint_acceleration'].grid(column = 4, row = 2, sticky='w')
+		self.variables['present_acceleration'] = IntVar()
+		self.variables['present_acceleration'].set(1)		
+		self.checks['present_acceleration']= Checkbutton(fp,text="Present Acceleration",variable=self.variables['present_acceleration'])
+		self.checks['present_acceleration'].grid(column = 4, row = 3, sticky='w')
 
 
 		fv = LabelFrame(self,text="Velocity Control")
@@ -132,15 +132,15 @@ class trace_frame(LabelFrame):
 
 		self.viewport_current_x = 0
 		self.viewport_start_time = time.time()
-		self.viewport_size_y_pos = self.viewports['position'].winfo_height()
-		self.viewport_size_x_pos = self.viewports['position'].winfo_width()
+		self.viewport_size_y_pos = self.viewports['acceleration'].winfo_height()
+		self.viewport_size_x_pos = self.viewports['acceleration'].winfo_width()
 		self.viewport_size_y_vel = self.viewports['velocity'].winfo_height()
 		self.viewport_size_y_cur = self.viewports['current'].winfo_height()
 		self.viewport_size_y_pwm = self.viewports['pwm'].winfo_height()
 		self.grid_x()
 
 	def grid_x(self):
-			self.viewports['position'].create_line(0,self.viewport_size_y_pos/2.0,self.viewport_size_x_pos,self.viewport_size_y_pos/2.0,width=1,fill="#CCCCCC")
+			self.viewports['acceleration'].create_line(0,self.viewport_size_y_pos/2.0,self.viewport_size_x_pos,self.viewport_size_y_pos/2.0,width=1,fill="#CCCCCC")
 			self.viewports['velocity'].create_line(0,self.viewport_size_y_vel/2.0,self.viewport_size_x_pos,self.viewport_size_y_vel/2.0,width=1,fill="#CCCCCC")
 			self.viewports['current'].create_line(0,self.viewport_size_y_cur/2.0,self.viewport_size_x_pos,self.viewport_size_y_cur/2.0,width=1,fill="#CCCCCC")
 			self.viewports['pwm'].create_line(0,self.viewport_size_y_pwm/2.0,self.viewport_size_x_pos,self.viewport_size_y_pwm/2.0,width=1,fill="#CCCCCC")
@@ -234,9 +234,9 @@ class trace_frame(LabelFrame):
 
 
 	def update(self,
-		goal_position,
-		setpoint_position,
-		present_position,
+		goal_acceleration,
+		setpoint_acceleration,
+		present_acceleration,
 		goal_velocity,
 		setpoint_velocity,
 		present_velocity,
@@ -247,8 +247,8 @@ class trace_frame(LabelFrame):
 		setpoint_pwm
 		):
 
-			self.viewport_size_y_pos = self.viewports['position'].winfo_height()
-			self.viewport_size_x_pos = self.viewports['position'].winfo_width()
+			self.viewport_size_y_pos = self.viewports['acceleration'].winfo_height()
+			self.viewport_size_x_pos = self.viewports['acceleration'].winfo_width()
 			self.viewport_size_y_vel = self.viewports['velocity'].winfo_height()
 			self.viewport_size_y_cur = self.viewports['current'].winfo_height()
 			self.viewport_size_y_pwm = self.viewports['pwm'].winfo_height()
@@ -261,7 +261,7 @@ class trace_frame(LabelFrame):
 
 			if time.time() >= self.viewport_start_time+1.0:
 				self.viewport_start_time += 1.0
-				self.viewports['position'].create_line(
+				self.viewports['acceleration'].create_line(
 					self.viewport_current_x,
 					0,
 					self.viewport_current_x+1,
@@ -298,30 +298,30 @@ class trace_frame(LabelFrame):
 				# change 180 by the max rotation angle of the servo form ram
 				# change 180 by the max rotation angle of the servo form ram
 
-			if self.variables['goal_position'].get() == 1:
-				self.viewports['position'].create_line(
+			if self.variables['goal_acceleration'].get() == 1:
+				self.viewports['acceleration'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_pos-goal_position/180.0*self.viewport_size_y_pos,
+					self.viewport_size_y_pos/2-goal_acceleration/1000.0*self.viewport_size_y_pos/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_pos-goal_position/180.0*self.viewport_size_y_pos,
+					self.viewport_size_y_pos/2-goal_acceleration/1000.0*self.viewport_size_y_pos/2,
 					width=2,
 					fill="#0000FF"
 				)
-			if self.variables['setpoint_position'].get() == 1:						
-				self.viewports['position'].create_line(
+			if self.variables['setpoint_acceleration'].get() == 1:						
+				self.viewports['acceleration'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_pos-setpoint_position/180.0*self.viewport_size_y_pos,
+					self.viewport_size_y_pos/2-setpoint_acceleration/1000.0*self.viewport_size_y_pos/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_pos-setpoint_position/180.0*self.viewport_size_y_pos,
+					self.viewport_size_y_pos/2-setpoint_acceleration/1000.0*self.viewport_size_y_pos/2,
 					width=3,
 					fill="#FF0000"
 				)		
-			if self.variables['present_position'].get() == 1:
-				self.viewports['position'].create_line(
+			if self.variables['present_acceleration'].get() == 1:
+				self.viewports['acceleration'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_pos-present_position/180.0*self.viewport_size_y_pos,
+					self.viewport_size_y_pos/2-present_acceleration/1000.0*self.viewport_size_y_pos/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_pos-present_position/180.0*self.viewport_size_y_pos,
+					self.viewport_size_y_pos/2-present_acceleration/1000.0*self.viewport_size_y_pos/2,
 					width=3,
 					fill="#000000"
 				)
@@ -329,27 +329,27 @@ class trace_frame(LabelFrame):
 			if self.variables['goal_velocity'].get() == 1:
 				self.viewports['velocity'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_vel/2-goal_velocity/750.0*self.viewport_size_y_vel/2,
+					self.viewport_size_y_vel/2-goal_velocity/1200.0*self.viewport_size_y_vel/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_vel/2-goal_velocity/750.0*self.viewport_size_y_vel/2,
+					self.viewport_size_y_vel/2-goal_velocity/1200.0*self.viewport_size_y_vel/2,
 					width=2,
 					fill="#0000FF"
 				)
 			if self.variables['setpoint_velocity'].get() == 1:
 				self.viewports['velocity'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_vel/2-setpoint_velocity/750.0*self.viewport_size_y_vel/2,
+					self.viewport_size_y_vel/2-setpoint_velocity/1200.0*self.viewport_size_y_vel/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_vel/2-setpoint_velocity/750.0*self.viewport_size_y_vel/2,
+					self.viewport_size_y_vel/2-setpoint_velocity/1200.0*self.viewport_size_y_vel/2,
 					width=2,
 					fill="#FF0000"
 				)					
 			if self.variables['present_velocity'].get() == 1:
 				self.viewports['velocity'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_vel/2-present_velocity/750.0*self.viewport_size_y_vel/2,
+					self.viewport_size_y_vel/2-present_velocity/1200.0*self.viewport_size_y_vel/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_vel/2-present_velocity/750.0*self.viewport_size_y_vel/2,
+					self.viewport_size_y_vel/2-present_velocity/1200.0*self.viewport_size_y_vel/2,
 					width=2,
 					fill="#000000"
 				)
@@ -357,27 +357,27 @@ class trace_frame(LabelFrame):
 			if self.variables['goal_current'].get() == 1:
 				self.viewports['current'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_cur/2-goal_current/400.0*self.viewport_size_y_cur/2,
+					self.viewport_size_y_cur/2-goal_current/1000.0*self.viewport_size_y_cur/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_cur/2-goal_current/400.0*self.viewport_size_y_cur/2,
+					self.viewport_size_y_cur/2-goal_current/1000.0*self.viewport_size_y_cur/2,
 					width=2,
 					fill="#0000FF"
 				)					
 			if self.variables['setpoint_current'].get() == 1:
 				self.viewports['current'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_cur/2-setpoint_current/400.0*self.viewport_size_y_cur/2,
+					self.viewport_size_y_cur/2-setpoint_current/1000.0*self.viewport_size_y_cur/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_cur/2-setpoint_current/400.0*self.viewport_size_y_cur/2,
+					self.viewport_size_y_cur/2-setpoint_current/1000.0*self.viewport_size_y_cur/2,
 					width=2,
 					fill="#FF0000"
 				)					
 			if self.variables['present_current'].get() == 1:
 				self.viewports['current'].create_line(
 					self.viewport_current_x,
-					self.viewport_size_y_cur/2-present_current/400.0*self.viewport_size_y_cur/2,
+					self.viewport_size_y_cur/2-present_current/1000.0*self.viewport_size_y_cur/2,
 					self.viewport_current_x+1,
-					self.viewport_size_y_cur/2-present_current/400.0*self.viewport_size_y_cur/2,
+					self.viewport_size_y_cur/2-present_current/1000.0*self.viewport_size_y_cur/2,
 					width=2,
 					fill="#000000"
 				)					
