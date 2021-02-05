@@ -26,8 +26,6 @@ extern ADC_HandleTypeDef hadc1;
 // POSITION FILTER
 #define ALPHA_VOLTAGE				0.05f // (default:0.05) F = 20kHz ==> Fc (-3dB) = 170.0Hz
 #define ALPHA_CURRENT_SENSE			0.05f // (default:0.05) F = 20kHz ==> Fc (-3dB) = 170.0Hz
-#define ALPHA_CURRENT_SENSE_OFFSET 	0.001f
-
 
 #define ALPHA_VELOCITY			0.12f // (default:0.12) F = 1000Hz ==> Fc (-3dB) = 20Hz
 #define ALPHA_CURRENT_SETPOINT 	0.96f // (default:0.12) F = 1000Hz ==> Fc (-3dB) = 20Hz
@@ -55,7 +53,6 @@ static float setpoint_velocity_dps = 0.0f;
 static bool entering_state = true;
 static uint32_t current_control_mode = REG_CONTROL_MODE_PWM;
 static uint16_t const period_us = (uint16_t)(1000000.0f/LOOP_FREQUENCY_HZ);
-static uint32_t counter = 0;
 // PIDs
 static pid_context_t pid_velocity;
 static pid_context_t pid_current;
@@ -64,46 +61,63 @@ static float present_velocity_dps = 0.0f;
 static float last_setpoint_velocity_dps = 0.0f;
 static uint16_t last_encoder_counter = 0;
 
-// called once after SW REBBOT or HW RESET, and every time entering a new control loop mode
-void APP_Control_Reset()
+// may be called for RESET (unused)
+void APP_Control_Deep_Reset()
 {
 	// reset
-	entering_state = true;
-	counter = 0;
-	pid_reset(&pid_velocity);
-	pid_reset(&pid_current);
+	motor_current_input_adc = 0.0f;
+	voltage_input_adc = 0.0f; // NOTE : init by zero will delay the present voltage estimation by 1 ms at least
+	pwm_sign = 0.0f;
+	pwm_ratio = 0.0f;
+	present_motor_current_ma = 0.0f;
+	present_voltage_0v1 = 0.0f;
 	setpoint_pwm = 0.0f;
 	setpoint_current_ma = 0.0f;
 	setpoint_acceleration_dpss = 0.0f;
 	setpoint_velocity_dps = 0.0f;
+	entering_state = true;
+	pid_reset(&pid_velocity);
+	pid_reset(&pid_current);
+	present_velocity_dps = 0.0f;
+	last_setpoint_velocity_dps = 0.0f;
+	last_encoder_counter = 0;
+	__HAL_TIM_SET_COUNTER(&htim1,0);
+}
+
+// called and every time entering a new control loop mode
+// note : do not touch preset velocity estimation
+void APP_Control_Reset()
+{
+	// reset
+	pwm_sign = 0.0f;
+	pwm_ratio = 0.0f;
+	setpoint_pwm = 0.0f;
+	setpoint_current_ma = 0.0f;
+	setpoint_acceleration_dpss = 0.0f;
+	setpoint_velocity_dps = 0.0f;
+	entering_state = true;
+	pid_reset(&pid_velocity);
+	pid_reset(&pid_current);
 	last_setpoint_velocity_dps = 0.0f;
 }
 
 // called once after SW REBOOT or HW RESET
 void APP_Control_Init()
 {
-	// reset (EWMA) filtered sensor inputs
-	motor_current_input_adc = 0.0f;
-	voltage_input_adc = 0.0f; // NOTE : init by zero will delay the present voltage estimation by 1 ms at least
-
 	// force motor in coast
 	__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,0);
 	__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_2,0);
 	// start motor PWM generation
-	HAL_TIM_PWM_Start_IT(&htim4,TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start_IT(&htim4,TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_2);
 	HAL_TIM_Base_Start(&htim6);
 	// start ADC
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_DMA,3);
 	// start Encoder
 	HAL_TIM_IC_Start(&htim1,TIM_CHANNEL_1);
 	HAL_TIM_IC_Start(&htim1,TIM_CHANNEL_2);
-
 	// 2ms delay for filtered sensor inputs to stabilize
 	HAL_Delay(1);
-
-	// reset all state control loop variables
-	APP_Control_Reset();
 }
 
 // called from main loop
@@ -129,7 +143,9 @@ void APP_Control_Process()
 	if( regs[REG_INV_ROTATION_SENSOR_VALUE]==1)
 		present_velocity_dps = -present_velocity_dps;
 
-	// TODO : compute acceleration
+	// compute acceleration from velocity
+	setpoint_acceleration_dpss = setpoint_velocity_dps - last_setpoint_velocity_dps;
+	last_setpoint_velocity_dps = setpoint_velocity_dps;
 
 	// torque enable logic
 	bool torque_enable = (regs[REG_TORQUE_ENABLE]!=0) && (regs[REG_HARDWARE_ERROR_STATUS]==0);
@@ -210,9 +226,7 @@ void APP_Control_Process()
 				float const pid_vel_kff = (float)(MAKE_SHORT(regs[REG_PID_VELOCITY_KFF_L],regs[REG_PID_VELOCITY_KFF_H]))/1000.0f;
 				float const pid_acc_kff = (float)(MAKE_SHORT(regs[REG_PID_ACCELERATION_KFF_L],regs[REG_PID_ACCELERATION_KFF_H]))/100000.0f;
 				float const velocity_feed_forward = pid_vel_kff * setpoint_velocity_dps;
-				setpoint_acceleration_dpss = setpoint_velocity_dps - last_setpoint_velocity_dps;
 				float const acceleration_feed_forward = pid_acc_kff * setpoint_acceleration_dpss;
-				last_setpoint_velocity_dps = setpoint_velocity_dps;
 				// TODO Update REG names from position to velocity
 				float const pid_vel_kp = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KP_L],regs[REG_PID_POSITION_KP_H]))/100.0f;
 				float const pid_vel_ki = (float)(MAKE_SHORT(regs[REG_PID_POSITION_KI_L],regs[REG_PID_POSITION_KI_H]))/1000.0f;
@@ -373,10 +387,9 @@ void APP_Control_Process()
 	else
 	{
 		APP_Control_Reset();
-		// motor brake
-		uint16_t const CCRx = (uint16_t)(1.0f*(float)(__HAL_TIM_GET_AUTORELOAD(&htim4)+1))+1;
-		__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,CCRx);
-		__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_2,CCRx);
+		// motor coast
+		__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,0);
+		__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_2,0);
 	}
 
 	// Note : This is an unipolar current sensing architecture,
@@ -406,8 +419,6 @@ void APP_Control_Process()
 
 	regs[REG_SETPOINT_VELOCITY_DPS_L] = LOW_BYTE((int16_t)setpoint_velocity_dps);
 	regs[REG_SETPOINT_VELOCITY_DPS_H] = HIGH_BYTE((int16_t)setpoint_velocity_dps);
-	//regs[REG_SETPOINT_VELOCITY_DPS_L] = LOW_BYTE((int16_t)pid_position.err_integral); // DEBUG
-	//regs[REG_SETPOINT_VELOCITY_DPS_H] = HIGH_BYTE((int16_t)pid_position.err_integral); // DEBUG
 
 	regs[REG_SETPOINT_CURRENT_MA_L] = LOW_BYTE((int16_t)setpoint_current_ma);
 	regs[REG_SETPOINT_CURRENT_MA_H] = HIGH_BYTE((int16_t)setpoint_current_ma);
@@ -427,10 +438,7 @@ void APP_Control_Process()
 	regs[REG_VOLTAGE_INPUT_ADC_L] = LOW_BYTE((uint16_t)voltage_input_adc);
 	regs[REG_VOLTAGE_INPUT_ADC_H] = HIGH_BYTE((uint16_t)voltage_input_adc);
 
-	// steps
-	++counter;
 }
-
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
