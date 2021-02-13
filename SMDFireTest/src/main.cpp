@@ -3,6 +3,7 @@
 #include <ros.h>
 #include "std_msgs/Int16.h"
 #include <WiFi.h>
+#include "wifi_credentials.h"
 
 #include "sm_protocol.h"
 
@@ -67,9 +68,8 @@ void setup()
   M5.Lcd.setCursor(0, 0);
   M5.Lcd.print("WiFi...");
 
-  const char *ssid = "SFR-5718";
-  const char *password = "2HI5D6N3NX3UTL56TTHL";
 
+  // modify wifi_credentials.h
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED)
   {
