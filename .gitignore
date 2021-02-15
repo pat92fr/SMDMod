@@ -4,4 +4,5 @@ ControlFirmware/Release
 ControlFirmware/.settings
 ControlFirmware/ControlFirmware*.launch
 SMDFireTest/lib/ros_lib
+SMDFireTest/include/wifi_credentials.h
 .metadata
