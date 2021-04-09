@@ -140,7 +140,7 @@ void APP_Control_Process()
 	float present_speed_dps_unfiltered = (float)delta_encoder_counter/CPR/REDUCER*360.0f*LOOP_FREQUENCY_HZ;
 	last_encoder_counter = present_encoder_counter;
 	present_velocity_dps = ALPHA_VELOCITY * present_speed_dps_unfiltered + (1.0f-ALPHA_VELOCITY)*present_velocity_dps;
-	if( regs[REG_INV_ROTATION_SENSOR_VALUE]==1)
+	if( regs[REG_INV_ROTATION_SENSOR]==1)
 		present_velocity_dps = -present_velocity_dps;
 
 	// compute acceleration from velocity
